@@ -1,0 +1,467 @@
+/*! Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+/*! Global */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    height: 100vh;
+    width: 100%;
+    background-color: #574cf3;
+    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.06em;
+    font-size: 0.9rem;
+}
+
+.formel .form-input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0.6rem 0.2rem 0.1rem 0.2rem;
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    border-bottom: 1px solid white !important;
+    width: 100%;
+    transition: padding 0.5s ease;
+}
+
+.formel .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.438);
+    font-size: .8rem;
+}
+
+a {
+    font-size: 0.8rem;
+    color: white;
+    text-decoration: none;
+}
+
+.btn {
+    height: 2.5rem;
+    width: 65%;
+    background: white;
+    border: transparent;
+    color: #493beb;
+    border-radius: 30px;
+    letter-spacing: 0.06em;
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.btn:hover {
+    background: #d6d6d6;
+    color: #3427ca;
+    font-size: 16px;
+}
+
+.is-invalid {
+    border-color: red !important;
+    color: rgb(255, 104, 104);
+}
+
+/*! End Global */
+
+/*! Login */
+.login-form {
+    width: 901.26px;
+    height: 502px;
+    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+    color: white;
+    letter-spacing: 0.06rem;
+    display: flex;
+    justify-content: center;
+}
+
+.form-body {
+    width: 32rem;
+    background: #483bec;
+    border-radius: 2rem 0 0 2rem;
+    padding: 1.4rem 3rem 2rem 3rem;
+}
+
+.header {
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    color: white;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.title-header {
+    line-height: 1.5rem;
+}
+
+.title-main {
+    font-size: 2.8rem;
+    line-height: 2.5rem;
+}
+
+.formel {
+    margin: 1.5rem 0 1.1rem 0;
+    color: #dbdbdb;
+    transition: all 0.4s ease;
+}
+
+.formel:hover {
+    color: white;
+}
+
+.formel label {
+    display: block;
+    font-size: 1rem;
+}
+
+.lupa-pw {
+    font-size: 0.8rem;
+    color: #d4d4d4;
+    transition: all 0.5s ease;
+}
+
+.lupa-pw:hover {
+    color: white;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+.row-btn-login {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.1rem 0 1.1rem 0;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:hover {
+    border-color: #d4d4d4;
+}
+
+input[type="checkbox"]:checked {
+    background-color: white;
+}
+
+input[type="checkbox"]:checked:hover {
+    background-color: #d4d4d4;
+}
+
+input[type="checkbox"]::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 0.6rem;
+    content: "\f00c";
+    color: #483bec;
+    display: none;
+}
+
+input[type="checkbox"]:checked::after {
+    display: block;
+}
+
+.remember-me label {
+    margin-left: 0.4rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.btn-login {
+    width: 30%;
+}
+
+.register-section {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.register-section .row-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-section .row-register .garis-batas {
+    width: 22rem;
+    border-bottom: 1px solid white;
+    margin-bottom: 1rem;
+}
+
+.daftar-link a {
+    font-size: 1rem;
+    transition: all 0.5s ease;
+}
+
+.daftar-link > a:hover {
+    text-decoration: underline;
+    font-size: 17px;
+}
+
+.form-img {
+    border-radius: 0 2rem 2rem 0;
+}
+/*! endLogin */
+
+/*! Register */
+
+.register-form {
+    width: 910px;
+    height: 552px;
+    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+    color: white;
+    letter-spacing: 0.06rem;
+    display: flex;
+    justify-content: center;
+}
+
+.row-back {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.row-back a .link-back {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 86.77px;
+    height: 22.2px;
+    transition: all 0.5s ease;
+    color: #c8c8c8;
+}
+
+.row-back a .link-back:hover {
+    font-size: 14px;
+    color: white;
+}
+
+.header .title-register {
+    font-size: 1.3rem;
+    margin-top: 0.7rem;
+}
+
+.form-regis label {
+    font-size: 0.9rem;
+}
+
+.section-kelas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-kelas .form-regis {
+    margin: 0.3rem 0 -1rem 0;
+}
+
+.container-select {
+    display: flex;
+    align-items: center;
+    margin-top: 0.8rem;
+    height: 30px;
+}
+
+/* Reset Select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    background: none;
+    background-image: none;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid white;
+    font-family: "Poppins", sans-serif;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+/* Custom Select */
+.select {
+    position: relative;
+    display: flex;
+    width: 7rem;
+    height: 3.5rem;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    overflow: hidden;
+}
+select {
+    flex: 1;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Arrow */
+.select::after {
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 0.9rem;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background: none;
+    cursor: pointer;
+    color: #d8d8d8;
+    pointer-events: none;
+    -webkit-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+}
+/* Transition */
+.select:hover::after {
+    color: whitesmoke;
+}
+
+.section-password {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -1rem;
+}
+
+.section-password .form-regis {
+    width: 45%;
+}
+
+.row-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.1rem 0 1.1rem 0;
+}
+
+/* ! End Register */
+
+/* ! Forgot Password */
+
+.fpw-form {
+    width: 45rem;
+    height: 29rem;
+    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+    color: white;
+    letter-spacing: 0.06rem;
+    display: flex;
+    justify-content: center;
+}
+
+.form-body-fpw {
+    width: 45rem;
+    height: 29rem;
+    background: #483bec;
+    border-radius: 2rem 2rem 2rem 2rem;
+    padding: 1.4rem 6rem 3rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.back-fpw {
+    position: absolute;
+    top: 29px;
+}
+
+.container-fpw {
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-fpw {
+    font-size: 1.1rem;
+    letter-spacing: 0.2rem;
+}
+
+.desc_fpw p {
+    font-size: 0.8rem;
+    text-align: center;
+    color: #dbdbdb;
+    transition: all 0.5s ease;
+}
+.desc_fpw p:hover {
+    font-size: 12px;
+    color: white;
+}
+
+.formel-fpw {
+    margin: 2rem 0rem 2rem 0rem;
+    position: relative;
+    top: 10px;
+}
+
+.btn-fpw {
+    position: relative;
+    top: 40px;
+}
+
+/* ! End Forgot-Password */
+
+/* ! Reset Password */
+
+.rpw-form {
+    width: 45rem;
+    height: 30rem;
+    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+    color: white;
+    letter-spacing: 0.06rem;
+    display: flex;
+    justify-content: center;
+}
+
+.form-body-rpw {
+    width: 45rem;
+    height: 30rem;
+    background: #483bec;
+    border-radius: 2rem 2rem 2rem 2rem;
+    padding: 3rem 6rem 3rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-rpw {
+    margin-bottom: -1.5rem;
+}
