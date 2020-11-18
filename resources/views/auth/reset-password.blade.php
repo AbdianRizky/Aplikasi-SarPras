@@ -16,38 +16,17 @@
                     <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
                     <!--! email -->
-                    <div class="formel formel-fpw">
-                        <x-inputs.label for="email" value="{{ __('Email') }}"/>
-                        <x-inputs.form-input type="text" name="email" id="email" :value="old('email', $request->email)" class="form-input" placeholder="Masukan Email" autocomplete="off" />
-                    </div>
+                    <x-auth.input type="email" field="email" label="Email" class="formel-fpw"/>
 
                     <!--! Password -->
-                    <div class="formel form-fwp">
-                        <x-inputs.label for="password" value="{{ __('Password') }}"/>
-                        <x-inputs.form-input type="password" name="password" id="password" class="form-input" placeholder="Masukan Password" autocomplete="off" maxlength="16" />
-                        @error('password')
-                            <span>
-                                {{ $message }}
-                            </span>
-                        @enderror
-                    </div>
+                    <x-auth.input type="password" field="password" label="Password" class="formel-fpw"/>
 
                     <!--! Konfirmasi -->
-                    <div class="formel form-fwp">
-                        <x-inputs.label for="password" value="{{ __('Konfirmasi') }}"/>
-                        <x-inputs.form-input type="password" name="password_confirmation" id="password" class="form-input" placeholder="Konfirmasi Password" autocomplete="off" maxlength="16" />
-                        @error('password_confirmation')
-                            <span>
-                                <strong> {{ $message }} </strong>
-                            </span>
-                        @enderror
-                    </div>
+                    <x-auth.input type="password" field="password_confirmation" label="Konfirmasi" class="formel-fpw"/>
 
                     <div class="row-btn btn-fpw">
                         <!--! Button -->
-                        <x-inputs.btn class="btn">
-                            {{ __('Setel Ulang') }}
-                        </x-inputs.btn>
+                        <x-auth.btn label="Setel Ulang" />
                     </div>
                 </form>
             </div>

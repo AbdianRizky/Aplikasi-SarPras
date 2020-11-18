@@ -12,6 +12,15 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.sass('resources/sass/app.scss', 'public/css')
+
+/*
+ |--------------------------------------------------------------------------
+ | Optional
+ |--------------------------------------------------------------------------
+ | untuk merefresh halaman web secara otomatis ketika ada suatu file yang
+ | mengalami perubahan di dalamnya.
+ */
+mix.browserSync({
+    proxy: 'localhost:8000'
+});

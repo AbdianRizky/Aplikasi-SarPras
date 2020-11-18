@@ -5,7 +5,7 @@
         <div class="row-back back-fpw">
             <a href="/login">
                 <div class="link-back">
-                    <x-arrow-back/>
+                    <x-auth.arrow-back/>
                     <span>Kembali</span>
                 </div>
             </a>
@@ -35,16 +35,11 @@
                 @csrf
 
                 <!--! email -->
-                <div class="formel formel-fpw">
-                    <x-inputs.label for="email" value="{{ __('Email') }}"/>
-                    <x-inputs.form-input type="text" name="email"  id="email" class="form-input" placeholder="Masukan Email" autocomplete="off" />
-                </div>
+                <x-auth.input type="email" field="email" label="Email" class="formel-fpw"/>
 
                 <div class="row-btn btn-fpw">
                     <!--! Button -->
-                    <x-inputs.btn class="btn">
-                        {{ __('Kirim') }}
-                    </x-inputs.btn>
+                    <x-auth.btn class="btn" label="Kirim"/>
                 </div>
             </form>
         </div>

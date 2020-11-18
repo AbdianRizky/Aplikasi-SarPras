@@ -321,17 +321,25 @@ select::-ms-expand {
 .select {
     position: relative;
     display: flex;
+    flex-direction: column;
     width: 7rem;
     height: 3.5rem;
-    align-items: center;
-    justify-content: space-between;
     background: none;
     overflow: hidden;
+    margin-bottom: 10px;
 }
 select {
     flex: 1;
     color: #fff;
     cursor: pointer;
+}
+
+select option:disabled{
+    display: none;
+}
+
+select option {
+    color: black;
 }
 
 /* Arrow */
@@ -341,7 +349,7 @@ select {
     font-weight: 900;
     font-size: 0.9rem;
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 0;
     background: none;
     cursor: pointer;
@@ -354,6 +362,7 @@ select {
 /* Transition */
 .select:hover::after {
     color: whitesmoke;
+    transform: rotate(180deg);
 }
 
 .section-password {

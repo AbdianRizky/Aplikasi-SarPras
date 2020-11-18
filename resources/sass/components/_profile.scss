@@ -1,0 +1,36 @@
+.profile-toggle {
+    width: $profile-width;
+    height: $profile-height;
+    transition: all $transition-secondary;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    cursor: pointer;
+
+    .profile-link {
+        z-index: 1;
+        position: absolute;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        span {
+            margin-right: 25px;
+        }
+
+        img {
+            width: $img-width;
+            height: $img-height;
+            border-radius: 50%;
+            transition: all $transition-secondary;
+        }
+    }
+
+    @import 'components/profile-dropdown';
+}
+.profile-toggle:hover {
+    font-size: $navbar-font-size + 1px;
+    img {
+        box-shadow: 5px 4px 0px 1px #001d3d;
+    }
+}

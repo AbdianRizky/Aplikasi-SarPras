@@ -1,0 +1,21 @@
+@import 'base/color';
+$poppins: 'Poppins', sans-serif;
+$spacing: 1.5px;
+$font-primary: 12px;
+$navbar-font-size: 15px;
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    color: $text-primary;
+    font-size: $font-primary;
+    font-family: $poppins;
+    letter-spacing: $spacing;
+    text-decoration: none;
+}
+

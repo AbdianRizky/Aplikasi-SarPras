@@ -1,0 +1,67 @@
+$nav-width: 100%;
+$nav-height: 74px;
+$logo-width: 150px;
+$link-width: 600px;
+$link-height: 50px;
+$search-width: 315px;
+$search-height: 35px;
+$input-search-width: 250px;
+$btn-width: 39px;
+$btn-height: 35px;
+$profile-width: 220px;
+$profile-height: 74px;
+$img-width:45px;
+$img-height:45px;
+$icon-profile: 25px;
+$icon-about-width: 19px;
+$icon-about-height: 25px;
+$icon-service-width: 20px;
+$icon-service-height: 25px;
+$transition-primary: .5s ease;
+$transition-secondary: .2s ease;
+
+nav {
+    font-family: $poppins;
+    letter-spacing: $spacing;
+    font-size: $navbar-font-size;
+    background-color: $primary;
+    color: $text-primary;
+    width: $nav-width;
+    height: $nav-height;
+    box-shadow: 0px 9px 10px  rgba(0, 0, 0, 0.25);
+
+    .container {
+        padding: 12px 32px 12px 32px;
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .logo {
+                width: $logo-width;
+
+                svg {
+                    vertical-align: middle;
+                }
+            }
+
+            .link {
+                width: $link-width;
+                height: $link-height;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                @import 'components/search';
+
+                .batas {
+                    height: 100%;
+                    border-left: 1px solid $warna-batas;
+                }
+
+                @import 'components/profile';
+            }
+        }
+    }
+}

@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        // Alert::success('adon', 'selamat datang');
+        alert()->success('hooray');
+        return view('app.home');
     }
 }

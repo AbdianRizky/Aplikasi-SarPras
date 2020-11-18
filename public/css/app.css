@@ -1,0 +1,322 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  color: white;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+
+nav {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  background-color: #483BEC;
+  color: white;
+  width: 100%;
+  height: 74px;
+  box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.25);
+}
+
+nav .container {
+  padding: 12px 32px 12px 32px;
+}
+
+nav .container .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .container .row .logo {
+  width: 150px;
+}
+
+nav .container .row .logo svg {
+  vertical-align: middle;
+}
+
+nav .container .row .link {
+  width: 600px;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav .container .row .link .search {
+  display: flex;
+  width: 315px;
+  height: 35px;
+  justify-content: flex-start;
+}
+
+nav .container .row .link .search input {
+  width: 250px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.719);
+  background-color: #9E97F5;
+  outline: none;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.6) 75.91%, #ffffff 100.91%);
+  padding: 9px 13px 9px 13px;
+}
+
+nav .container .row .link .search button {
+  width: 39px;
+  height: 35px;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.719);
+  transition: all 0.5s ease;
+}
+
+nav .container .row .link .search button svg {
+  text-align: center;
+  width: 25px;
+  height: 25px;
+}
+
+nav .container .row .link .search button:hover {
+  cursor: pointer;
+  background-color: #cacaca;
+  color: white;
+}
+
+nav .container .row .link .batas {
+  height: 100%;
+  border-left: 1px solid #b3b3b3;
+}
+
+nav .container .row .link .profile-toggle {
+  width: 220px;
+  height: 74px;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+nav .container .row .link .profile-toggle .profile-link {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav .container .row .link .profile-toggle .profile-link span {
+  margin-right: 25px;
+}
+
+nav .container .row .link .profile-toggle .profile-link img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+nav .container .row .link .profile-toggle ul {
+  width: 220px;
+  background-color: #483BEC;
+  cursor: auto;
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 65px;
+  right: 25px;
+  border-radius: 0 0 15px 15px;
+  padding: 15px 20px 30px 20px;
+  transition: box-shadow 0.2s ease, top 0.2s ease, right 0.2s ease, position 0.2s ease;
+}
+
+nav .container .row .link .profile-toggle ul a li {
+  height: 45px;
+  padding: 10px 0;
+  border-bottom: 1px solid #b3b3b3;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .container .row .link .profile-toggle ul a li svg.profile {
+  width: 25px;
+  height: 25px;
+  color: #b3b3b3;
+}
+
+nav .container .row .link .profile-toggle ul a li svg.about {
+  width: 19px;
+  height: 25px;
+}
+
+nav .container .row .link .profile-toggle ul a li svg.service {
+  width: 20px;
+  height: 25px;
+}
+
+nav .container .row .link .profile-toggle ul a li:hover {
+  border-bottom: 1px solid white;
+}
+
+nav .container .row .link .profile-toggle ul a:hover {
+  font-size: 14px;
+}
+
+nav .container .row .link .profile-toggle ul:hover {
+  box-shadow: 10px 14px 0 0.1px #001d3d;
+  position: absolute;
+  top: 60px;
+  right: 32px;
+}
+
+nav .container .row .link .profile-toggle:hover {
+  font-size: 16px;
+}
+
+nav .container .row .link .profile-toggle:hover img {
+  box-shadow: 5px 4px 0px 1px #001d3d;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+main section.sidebar {
+  width: 300px;
+  height: 100%;
+  padding: 20px;
+}
+
+main section.sidebar .urutan {
+  width: 265px;
+  height: 100%;
+  background-color: #483BEC;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.295);
+  padding: 15px 15px;
+  margin-bottom: 12px;
+}
+
+main section.sidebar .urutan p {
+  margin-bottom: 24px;
+}
+
+main section.sidebar .urutan .sort {
+  background-color: none;
+  font-size: 14px;
+  font-weight: 300;
+  width: 100%;
+  height: 36.44px;
+  border-radius: 5px;
+  padding: 0 13px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  transition: all 0.1s ease;
+}
+
+main section.sidebar .urutan .sort:hover {
+  background-color: rgba(255, 255, 255, 0.137);
+  font-weight: 600;
+  color: white;
+}
+
+main section.sidebar .etalase {
+  width: 265px;
+  height: 100%;
+  background-color: #483BEC;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.295);
+  padding: 15px 15px;
+  margin-bottom: 12px;
+}
+
+main section.sidebar .etalase p {
+  margin-bottom: 24px;
+}
+
+main section.sidebar .etalase .sort {
+  background-color: none;
+  font-size: 14px;
+  font-weight: 300;
+  width: 100%;
+  height: 36.44px;
+  border-radius: 5px;
+  padding: 0 13px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  transition: all 0.1s ease;
+}
+
+main section.sidebar .etalase .sort:hover {
+  background-color: rgba(255, 255, 255, 0.137);
+  font-weight: 600;
+  color: white;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+main section.content {
+  width: 1000px;
+  height: 676px;
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 20px;
+}
+
+main section.content .box {
+  cursor: pointer;
+  height: 220px;
+  width: 220px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.295);
+  border-radius: 10px;
+}
+
+main section.content .box .product-photo img {
+  width: 100%;
+  height: 120.79px;
+  background-color: #ce12c4;
+  border-radius: 9px 9px 0 0;
+}
+
+main section.content .box .detail-product {
+  padding: 5px 10px;
+}
+
+main section.content .box .detail-product .title {
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+}
+
