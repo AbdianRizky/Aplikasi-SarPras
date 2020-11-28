@@ -30217,23 +30217,22 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 $(document).ready(function () {
-  //! Toggle Dropdown
-  $('.profile-toggle').click(function () {
-    $('ul').slideToggle(280);
+  //! Dropdown Toggle
+  $(".profile-toggle").click(function () {
+    $("ul").slideToggle(280);
   }).mouseleave(function () {
-    $('ul').slideUp(280);
-  }); // $('.box')
-  // .click(function (e) {
-  //     e.preventDefault()
-  //     Swal.fire({
-  //         title: 'Sweet!',
-  //         text: 'Modal with a custom image.',
-  //         imageUrl: 'https://unsplash.it/400/200',
-  //         imageWidth: 400,
-  //         imageHeight: 200,
-  //         imageAlt: 'Custom image',
-  //     })
-  // })
+    $("ul").slideUp(280);
+  }); //! Modal Toggle
+
+  $(".box").click(function (e) {
+    e.preventDefault();
+    $(".bgmodal").addClass("active").removeClass("bgmodal");
+  }); //! Modal Exit
+
+  $(".modal-exit").click(function (e) {
+    e.preventDefault();
+    $(".active").addClass("bgmodal").removeClass("active");
+  });
 });
 
 /***/ }),
@@ -30289,8 +30288,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Web Development\project\kksi\aplikasi-sarpras\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Web Development\project\kksi\aplikasi-sarpras\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\Development\Web\Project\KKSI\Aplikasi-SarPras\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\Development\Web\Project\KKSI\Aplikasi-SarPras\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

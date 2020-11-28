@@ -282,6 +282,7 @@ main section.sidebar .etalase .sort:hover {
 main {
   display: flex;
   justify-content: center;
+  z-index: 1;
 }
 
 main section.content {
@@ -318,5 +319,233 @@ main section.content .box .detail-product .title {
   color: black;
   font-size: 14px;
   font-weight: 500;
+}
+
+.active {
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  opacity: 1;
+  visibility: visible;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: visibility 0.2s ease, opacity 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.active .modal {
+  width: 700px;
+  height: 300px;
+  background-color: #483BEC;
+  border-radius: 10px;
+  padding: 20px 30px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1.5fr 1fr;
+}
+
+.active .modal .img-product {
+  padding-right: 15px;
+}
+
+.active .modal .img-product .img {
+  width: 100%;
+  height: auto;
+  background-color: #9c9c9c;
+  transition: all 0.1s ease 0.2s;
+  transform: translate(5px, 5px);
+}
+
+.active .modal .img-product .img.img:hover {
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
+  transform: translate(0px, 0px);
+}
+
+.active .modal .detail h1 {
+  font-size: large;
+  margin-bottom: 10px;
+}
+
+.active .modal .detail span {
+  color: #a2b0ff;
+}
+
+.active .modal .info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.active .modal .info a {
+  text-decoration: underline;
+}
+
+.active .modal .pesan {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.active .modal .pesan .btn-buy {
+  width: 120px;
+  height: 25px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  color: #483BEC;
+}
+
+.active .modal .pesan .btn-cart {
+  width: 120px;
+  height: 25px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  color: #483BEC;
+}
+
+.active .modal .modal-exit {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: -1px;
+  transition: all 0.2s ease;
+}
+
+.active .modal .modal-exit.modal-exit:hover {
+  font-size: larger;
+}
+
+@media screen and (min-width: 1700px) {
+  .active .modal {
+    transform: scale(1.2);
+  }
+}
+
+.bgmodal {
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: visibility 0.2s ease, opacity 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bgmodal .modal {
+  width: 700px;
+  height: 300px;
+  background-color: #483BEC;
+  border-radius: 10px;
+  padding: 20px 30px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1.5fr 1fr;
+}
+
+.bgmodal .modal .img-product {
+  padding-right: 15px;
+}
+
+.bgmodal .modal .img-product .img {
+  width: 100%;
+  height: auto;
+  background-color: #9c9c9c;
+  transition: all 0.1s ease 0.2s;
+  transform: translate(5px, 5px);
+}
+
+.bgmodal .modal .img-product .img.img:hover {
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
+  transform: translate(0px, 0px);
+}
+
+.bgmodal .modal .detail h1 {
+  font-size: large;
+  margin-bottom: 10px;
+}
+
+.bgmodal .modal .detail span {
+  color: #a2b0ff;
+}
+
+.bgmodal .modal .info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.bgmodal .modal .info a {
+  text-decoration: underline;
+}
+
+.bgmodal .modal .pesan {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.bgmodal .modal .pesan .btn-buy {
+  width: 120px;
+  height: 25px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  color: #483BEC;
+}
+
+.bgmodal .modal .pesan .btn-cart {
+  width: 120px;
+  height: 25px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  color: #483BEC;
+}
+
+.bgmodal .modal .modal-exit {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: -1px;
+  transition: all 0.2s ease;
+}
+
+.bgmodal .modal .modal-exit.modal-exit:hover {
+  font-size: larger;
+}
+
+@media screen and (min-width: 1700px) {
+  .bgmodal .modal {
+    transform: scale(1.2);
+  }
 }
 

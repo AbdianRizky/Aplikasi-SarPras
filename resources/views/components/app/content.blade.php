@@ -1,7 +1,3 @@
-@php
-    $alert = alert()->success('Sukses','alertnya sukses');
-@endphp
-
 <div class="box">
     <div class="product-photo">
         <img src="{{ asset('img/projektor-1.jpg') }}">

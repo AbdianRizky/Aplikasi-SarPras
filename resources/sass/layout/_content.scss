@@ -1,5 +1,7 @@
 main {
-    @include main;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
 
     section.content{
         width: 1000px;

@@ -1,4 +1,6 @@
 <x-app-layout>
+    <x-app.modal/>
+
     <nav>
         <x-app.navbar/>
     </nav>
@@ -9,8 +11,9 @@
         </section>
         <section class="content">
             @for($i = 0; $i < 20; $i++)
-                <x-app.content />
+            <x-app.content />
             @endfor
         </section>
     </main>
+
 </x-auth-layout>

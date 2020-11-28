@@ -42,15 +42,15 @@ ul {
         li:hover {
             border-bottom: 1px solid white;
         }
+        &:hover {
+            font-size: $font-primary + 2px;
+        }
     }
 
-    a:hover {
-        font-size: $font-primary + 2px;
+    &:hover {
+        box-shadow: 10px 14px 0 .1px #001d3d;
+        position: absolute;
+        top: 60px;
+        right: 32px;
     }
-}
-ul:hover {
-    box-shadow: 10px 14px 0 .1px #001d3d;
-    position: absolute;
-    top: 60px;
-    right: 32px;
 }

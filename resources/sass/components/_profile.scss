@@ -27,10 +27,12 @@
     }
 
     @import 'components/profile-dropdown';
-}
-.profile-toggle:hover {
-    font-size: $navbar-font-size + 1px;
-    img {
-        box-shadow: 5px 4px 0px 1px #001d3d;
+
+    &:hover {
+        font-size: $navbar-font-size + 1px;
+        img {
+            box-shadow: 5px 4px 0px 1px #001d3d;
+        }
     }
 }
+

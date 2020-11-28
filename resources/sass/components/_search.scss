@@ -3,7 +3,6 @@
     width: $search-width;
     height: $search-height;
     justify-content: flex-start;
-    // margin: 0 auto 0 30px;
 
     input {
         width: $input-search-width;
@@ -39,11 +38,10 @@
             width: 25px;
             height: 25px;
         }
-    }
-
-    button:hover {
-        cursor: pointer;
-        background-color: #cacaca;
-        color: white;
+        &:hover {
+            cursor: pointer;
+            background-color: #cacaca;
+            color: white;
+        }
     }
 }

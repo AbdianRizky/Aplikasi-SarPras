@@ -37,7 +37,8 @@ $sidebar-content-height: 100%;
 }
 
 main {
-    @include main;
+    display: flex;
+    justify-content: center;
 
     section.sidebar {
         width: $sidebar-witdth;
