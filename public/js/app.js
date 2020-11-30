@@ -30216,22 +30216,35 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var profile = $(".profile-toggle");
+var dropdownSect = $("ul");
+var box = $(".box");
+var modalStatus = $("#modal-status");
+var modal = $(".modal");
+var modalExit = $(".modal-exit");
 $(document).ready(function () {
   //! Dropdown Toggle
-  $(".profile-toggle").click(function () {
-    $("ul").slideToggle(280);
+  profile.click(function () {
+    dropdownSect.slideToggle(280);
   }).mouseleave(function () {
-    $("ul").slideUp(280);
+    dropdownSect.slideUp(280);
   }); //! Modal Toggle
 
-  $(".box").click(function (e) {
+  box.click(function (e) {
     e.preventDefault();
-    $(".bgmodal").addClass("active").removeClass("bgmodal");
+    modalStatus.addClass("active").removeClass("hidden");
+    modal.css({
+      transform: "translateY(0)",
+      opacity: "1"
+    });
   }); //! Modal Exit
 
-  $(".modal-exit").click(function (e) {
-    e.preventDefault();
-    $(".active").addClass("bgmodal").removeClass("active");
+  modalExit.click(function () {
+    modalStatus.addClass("hidden").removeClass("active");
+    modal.css({
+      transform: "translateY(30px)",
+      opacity: "0"
+    });
   });
 });
 

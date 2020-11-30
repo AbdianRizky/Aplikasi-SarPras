@@ -1,6 +1,5 @@
 <x-app-layout>
     <x-app.modal/>
-
     <nav>
         <x-app.navbar/>
     </nav>
@@ -15,5 +14,4 @@
             @endfor
         </section>
     </main>
-
 </x-auth-layout>

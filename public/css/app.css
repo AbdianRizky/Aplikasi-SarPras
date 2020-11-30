@@ -302,6 +302,7 @@ main section.content .box {
   background: #FFFFFF;
   box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.295);
   border-radius: 10px;
+  overflow: hidden;
 }
 
 main section.content .box .product-photo img {
@@ -313,6 +314,9 @@ main section.content .box .product-photo img {
 
 main section.content .box .detail-product {
   padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main section.content .box .detail-product .title {
@@ -332,26 +336,30 @@ main section.content .box .detail-product .title {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transition: visibility 0.2s ease, opacity 0.5s ease;
   background-color: rgba(0, 0, 0, 0.6);
+  transition: visibility 0.2s ease, opacity 0.5s ease;
 }
 
 .active .modal {
   width: 700px;
   height: 300px;
   background-color: #483BEC;
+  font-size: 12px;
   border-radius: 10px;
   padding: 20px 30px;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 1.5fr 1fr;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 
 .active .modal .img-product {
   padding-right: 15px;
 }
 
-.active .modal .img-product .img {
+.active .modal .img-product img {
   width: 100%;
   height: auto;
   background-color: #9c9c9c;
@@ -359,13 +367,17 @@ main section.content .box .detail-product .title {
   transform: translate(5px, 5px);
 }
 
-.active .modal .img-product .img.img:hover {
+.active .modal .img-product img:hover {
   box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
   transform: translate(0px, 0px);
 }
 
+.active .modal .detail {
+  margin-left: 10px;
+}
+
 .active .modal .detail h1 {
-  font-size: large;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
@@ -385,36 +397,36 @@ main section.content .box .detail-product .title {
 
 .active .modal .pesan {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-end;
 }
 
-.active .modal .pesan .btn-buy {
+.active .modal .pesan .btn {
+  font-family: "Poppins", sans-serif;
+  color: #483BEC;
+  font-size: 12px;
   width: 120px;
-  height: 25px;
+  height: 30px;
   border-radius: 30px;
   outline: none;
   border: none;
-  background-color: white;
   cursor: pointer;
-  color: #483BEC;
+  background-color: white;
+  border: 1px solid white;
+  transition: all 0.2s ease;
 }
 
-.active .modal .pesan .btn-cart {
-  width: 120px;
-  height: 25px;
-  border-radius: 30px;
-  outline: none;
-  border: none;
-  background-color: white;
-  cursor: pointer;
-  color: #483BEC;
+.active .modal .pesan .btn:hover {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
 }
 
 .active .modal .modal-exit {
   width: 30px;
   height: 30px;
   border-radius: 5px;
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -422,20 +434,32 @@ main section.content .box .detail-product .title {
   position: absolute;
   top: 0;
   right: -1px;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease 0.1s;
 }
 
-.active .modal .modal-exit.modal-exit:hover {
-  font-size: larger;
+.active .modal .modal-exit:hover {
+  font-size: 16px;
 }
 
 @media screen and (min-width: 1700px) {
   .active .modal {
-    transform: scale(1.2);
+    width: 800px;
+    height: 350px;
+    font-size: 14px;
+  }
+
+  .active .modal .pesan .btn {
+    width: 140px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .active .modal .modal-exit:hover {
+    font-size: 18px;
   }
 }
 
-.bgmodal {
+.hidden {
   width: 100%;
   height: 100vh;
   z-index: 3;
@@ -446,26 +470,30 @@ main section.content .box .detail-product .title {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transition: visibility 0.2s ease, opacity 0.5s ease;
   background-color: rgba(0, 0, 0, 0.6);
+  transition: visibility 0.2s ease, opacity 0.5s ease;
 }
 
-.bgmodal .modal {
+.hidden .modal {
   width: 700px;
   height: 300px;
   background-color: #483BEC;
+  font-size: 12px;
   border-radius: 10px;
   padding: 20px 30px;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 1.5fr 1fr;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 
-.bgmodal .modal .img-product {
+.hidden .modal .img-product {
   padding-right: 15px;
 }
 
-.bgmodal .modal .img-product .img {
+.hidden .modal .img-product img {
   width: 100%;
   height: auto;
   background-color: #9c9c9c;
@@ -473,62 +501,66 @@ main section.content .box .detail-product .title {
   transform: translate(5px, 5px);
 }
 
-.bgmodal .modal .img-product .img.img:hover {
+.hidden .modal .img-product img:hover {
   box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
   transform: translate(0px, 0px);
 }
 
-.bgmodal .modal .detail h1 {
-  font-size: large;
+.hidden .modal .detail {
+  margin-left: 10px;
+}
+
+.hidden .modal .detail h1 {
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
-.bgmodal .modal .detail span {
+.hidden .modal .detail span {
   color: #a2b0ff;
 }
 
-.bgmodal .modal .info {
+.hidden .modal .info {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-end;
 }
 
-.bgmodal .modal .info a {
+.hidden .modal .info a {
   text-decoration: underline;
 }
 
-.bgmodal .modal .pesan {
+.hidden .modal .pesan {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-end;
 }
 
-.bgmodal .modal .pesan .btn-buy {
+.hidden .modal .pesan .btn {
+  font-family: "Poppins", sans-serif;
+  color: #483BEC;
+  font-size: 12px;
   width: 120px;
-  height: 25px;
+  height: 30px;
   border-radius: 30px;
   outline: none;
   border: none;
-  background-color: white;
   cursor: pointer;
-  color: #483BEC;
+  background-color: white;
+  border: 1px solid white;
+  transition: all 0.2s ease;
 }
 
-.bgmodal .modal .pesan .btn-cart {
-  width: 120px;
-  height: 25px;
-  border-radius: 30px;
-  outline: none;
-  border: none;
-  background-color: white;
-  cursor: pointer;
-  color: #483BEC;
+.hidden .modal .pesan .btn:hover {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
 }
 
-.bgmodal .modal .modal-exit {
+.hidden .modal .modal-exit {
   width: 30px;
   height: 30px;
   border-radius: 5px;
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -536,16 +568,28 @@ main section.content .box .detail-product .title {
   position: absolute;
   top: 0;
   right: -1px;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease 0.1s;
 }
 
-.bgmodal .modal .modal-exit.modal-exit:hover {
-  font-size: larger;
+.hidden .modal .modal-exit:hover {
+  font-size: 16px;
 }
 
 @media screen and (min-width: 1700px) {
-  .bgmodal .modal {
-    transform: scale(1.2);
+  .hidden .modal {
+    width: 800px;
+    height: 350px;
+    font-size: 14px;
+  }
+
+  .hidden .modal .pesan .btn {
+    width: 140px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .hidden .modal .modal-exit:hover {
+    font-size: 18px;
   }
 }
 
