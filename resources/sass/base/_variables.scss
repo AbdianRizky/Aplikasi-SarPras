@@ -1,0 +1,36 @@
+//* ../app/pages/home navbar
+$nav-width: 100%;
+$nav-height: 74px;
+$logo-width: 100%;
+$logo-height: 20px;
+$link-width: 600px;
+$link-height: 50px;
+$search-width: 315px;
+$search-height: 35px;
+$input-search-width: 250px;
+$btn-width: 39px;
+$btn-height: 35px;
+$profile-width: 220px;
+$profile-height: 74px;
+$img-width: 45px;
+$img-height: 45px;
+$icon-profile: 25px;
+$icon-about-width: 19px;
+$icon-about-height: 25px;
+$icon-service-width: 20px;
+$icon-service-height: 25px;
+$transition-primary: 0.5s ease;
+$transition-secondary: 0.2s ease;
+
+//* ../app/pages/home sidebar
+$sidebar-witdth: 300px;
+$sidebar-height: 100%;
+$sidebar-content-width: 265px;
+$sidebar-content-height: 100%;
+
+//* ../app/pages/home modal
+$modal-width: 700px;
+$modal-height: 300px;
+$bgmodal: rgba(0, 0, 0, 0.6);
+$img-size: $modal-width / 0.2;
+$title: 18px;

@@ -35,22 +35,22 @@ class FortifyServiceProvider extends ServiceProvider
 
         // ! Login Route
         Fortify::loginView(function () {
-            return view('auth.login');
+            return view('pages.auth.login');
         });
 
         // ! Register Route
         Fortify::registerView(function () {
-            return view('auth.register');
+            return view('pages.auth.register');
         });
 
         // ! Password reset Route
         Fortify::requestPasswordResetLinkView(function () {
-            return view('auth.forgot-password');
+            return view('pages.auth.forgot-password');
         });
 
         // ! Resetting The Password link
         Fortify::resetPasswordView(function ($request) {
-            return view('auth.reset-password', ['request' => $request]);
+            return view('pages.auth.reset-password', ['request' => $request]);
         });
     }
 }

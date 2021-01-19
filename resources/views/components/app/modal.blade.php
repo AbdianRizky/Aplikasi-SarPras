@@ -1,7 +1,7 @@
 <div id="modal-status" class="hidden">
     <div class="modal">
         <section class="img-product">
-            <img src="{{ asset('img/projektor-1.jpg') }}" alt="Product">
+            <img src="{{ asset('storage/img/projektor-1.jpg') }}" alt="Product">
         </section>
         <article class="detail">
             <h1>Auking Mini Project</h1>

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -20,12 +19,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 <body>
-
     {{ $slot }}
-
     <!-- My Js -->
     <script src="{{ asset('js/app.js') }}"></script>
-    @include('sweetalert::alert')
-
 </body>
 </html>

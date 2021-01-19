@@ -1,0 +1,67 @@
+@import "../../components/navbar";
+// main {
+//     display: flex;
+//     justify-content: center;
+//     z-index: 1;
+
+//     section.content {
+//         width: 1000px;
+//         height: 676px;
+//         padding: 20px 0;
+//         display: grid;
+//         grid-template-columns: repeat(4, 1fr);
+//         place-items: center;
+//         gap: 20px;
+
+//         .box {
+//             cursor: pointer;
+//             height: 220px;
+//             width: 220px;
+//             background: #ffffff;
+//             box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.295);
+//             border-radius: 10px;
+//             overflow: hidden;
+
+//             .product-photo {
+//                 img {
+//                     width: 100%;
+//                     height: 120.79px;
+//                     background-color: #ce12c4;
+//                     border-radius: 9px 9px 0 0;
+//                 }
+//             }
+//             .detail-product {
+//                 padding: 5px 10px;
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 .title {
+//                     color: black;
+//                     font-size: $font-primary + 2px;
+//                     font-weight: 500;
+//                 }
+//             }
+//         }
+//     }
+
+//     section.sidebar {
+//         width: $sidebar-witdth;
+//         height: $sidebar-height;
+//         padding: 20px;
+
+//         .urutan {
+//             @include sidebarContent();
+//         }
+
+//         .etalase {
+//             @include sidebarContent();
+//         }
+//     }
+// }
+// .active {
+//     @include modal(visible, 1);
+// }
+
+// .hidden {
+//     @include modal(hidden, 0);
+// }

@@ -1,476 +1,950 @@
-/*! Font */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@charset "UTF-8";
 
-/*! Global */
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  color: white;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1.5px;
+  text-decoration: none;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    height: 100vh;
-    width: 100%;
-    background-color: #574cf3;
-    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: 0.06em;
-    font-size: 0.9rem;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #574cf3;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+  letter-spacing: 0.06em;
+  font-size: 0.9rem;
 }
 
-.formel .form-input {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 0.6rem 0.2rem 0.1rem 0.2rem;
-    font-size: 0.9rem;
-    font-family: "Poppins", sans-serif;
-    letter-spacing: 1px;
-    color: white;
-    border-bottom: 1px solid white !important;
-    width: 100%;
-    transition: padding 0.5s ease;
+body .login-form {
+  width: 100%;
+  height: 600px;
+  filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+  border: none;
+  color: white;
+  letter-spacing: 0.06rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.formel .form-input::placeholder {
-    color: rgba(255, 255, 255, 0.438);
-    font-size: .8rem;
+@media (min-width: 1024px) {
+  body .login-form {
+    align-items: initial;
+  }
 }
 
-a {
-    font-size: 0.8rem;
-    color: white;
-    text-decoration: none;
+body .login-form .form-body {
+  width: 100%;
+  background: #483bec;
+  padding: 2.5rem 2rem 2.5rem 2rem;
 }
 
-.btn {
-    height: 2.5rem;
-    width: 65%;
-    background: white;
-    border: transparent;
-    color: #493beb;
-    border-radius: 30px;
-    letter-spacing: 0.06em;
-    font-size: 0.9rem;
-    font-family: "Poppins", sans-serif;
-    cursor: pointer;
-    transition: all 0.5s ease;
+body .login-form .form-body .header .title {
+  color: white;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
-.btn:hover {
-    background: #d6d6d6;
-    color: #3427ca;
-    font-size: 16px;
+body .login-form .form-body .header .title.title-header {
+  line-height: 20px;
 }
 
-.is-invalid {
-    border-color: red !important;
-    color: rgb(255, 104, 104);
+body .login-form .form-body .header .title.title-main {
+  font-size: 3rem;
+  line-height: 45px;
 }
 
-/*! End Global */
-
-/*! Login */
-.login-form {
-    width: 901.26px;
-    height: 502px;
-    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
-    color: white;
-    letter-spacing: 0.06rem;
-    display: flex;
-    justify-content: center;
+@media (min-width: 768px) {
+  body .login-form .form-body {
+    width: 80%;
+    border-radius: 2rem;
+    padding: 2rem 3rem 3rem 3rem;
+  }
 }
 
-.form-body {
-    width: 32rem;
-    background: #483bec;
+@media (min-width: 1024px) {
+  body .login-form .form-body {
+    width: 502px;
     border-radius: 2rem 0 0 2rem;
-    padding: 1.4rem 3rem 2rem 3rem;
-}
+    padding: 2.5rem;
+  }
 
-.header {
-    margin-bottom: 1.5rem;
-}
-
-.title {
+  body .login-form .form-body .header .title {
     color: white;
     font-weight: normal;
     font-style: normal;
     text-align: center;
-    font-size: 0.8rem;
-}
-
-.title-header {
-    line-height: 1.5rem;
-}
-
-.title-main {
-    font-size: 2.8rem;
-    line-height: 2.5rem;
-}
-
-.formel {
-    margin: 1.5rem 0 1.1rem 0;
-    color: #dbdbdb;
-    transition: all 0.4s ease;
-}
-
-.formel:hover {
-    color: white;
-}
-
-.formel label {
-    display: block;
-    font-size: 1rem;
-}
-
-.lupa-pw {
-    font-size: 0.8rem;
-    color: #d4d4d4;
-    transition: all 0.5s ease;
-}
-
-.lupa-pw:hover {
-    color: white;
-    text-decoration: underline;
-    font-size: 13px;
-}
-
-.row-btn-login {
-    display: flex;
-    justify-content: space-between;
-    margin: 1.1rem 0 1.1rem 0;
-}
-
-.remember-me {
-    display: flex;
-    align-items: center;
     font-size: 0.9rem;
+  }
+
+  body .login-form .form-body .header .title.title-header {
+    line-height: 20px;
+  }
+
+  body .login-form .form-body .header .title.title-main {
+    font-size: 3.3rem;
+    line-height: 50px;
+  }
 }
 
-input[type="checkbox"] {
-    width: 1rem;
-    height: 1rem;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: transparent;
-    border: 2px solid white;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
+body .login-form .form-body form {
+  max-height: 100%;
 }
 
-input[type="checkbox"]:hover {
-    border-color: #d4d4d4;
+body .login-form .form-body form .formel {
+  color: #dbdbdb;
+  transition: color 0.4s ease;
+  margin: 30px 0 30px 0;
 }
 
-input[type="checkbox"]:checked {
-    background-color: white;
+body .login-form .form-body form .formel:hover {
+  color: white;
 }
 
-input[type="checkbox"]:checked:hover {
-    background-color: #d4d4d4;
+body .login-form .form-body form .formel label {
+  display: block;
+  font-size: 1.1rem;
 }
 
-input[type="checkbox"]::after {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 0.6rem;
-    content: "\f00c";
-    color: #483bec;
-    display: none;
+body .login-form .form-body form .formel .form-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0.6rem 0.2rem 0.1rem 0.2rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  border-bottom: 1px solid white !important;
+  width: 100%;
+  margin-top: 5px;
+  transition: padding 0.5s ease;
 }
 
-input[type="checkbox"]:checked::after {
-    display: block;
+body .login-form .form-body form .formel .form-input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.9rem;
 }
 
-.remember-me label {
-    margin-left: 0.4rem;
-    cursor: pointer;
-    font-size: 0.8rem;
+body .login-form .form-body form .formel .form-input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.9rem;
 }
 
-.btn-login {
-    width: 30%;
+body .login-form .form-body form .formel .form-input::placeholder {
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.9rem;
 }
 
-.register-section {
-    margin-top: 1.5rem;
-    font-size: 1rem;
-    text-align: center;
+body .login-form .form-body form .formel .form-input.is-invalid {
+  border-color: red !important;
 }
 
-.register-section .row-register {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body .login-form .form-body form .formel span.is-invalid {
+  color: #e67676;
 }
 
-.register-section .row-register .garis-batas {
-    width: 22rem;
-    border-bottom: 1px solid white;
-    margin-bottom: 1rem;
+body .login-form .form-body form .goto-fpw {
+  font-size: 0.9rem;
+  color: #d4d4d4;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+  will-change: color;
 }
 
-.daftar-link a {
-    font-size: 1rem;
-    transition: all 0.5s ease;
+body .login-form .form-body form .goto-fpw:hover {
+  color: white;
 }
 
-.daftar-link > a:hover {
-    text-decoration: underline;
-    font-size: 17px;
+body .login-form .form-body form .row-btn-login {
+  margin-top: 50px;
 }
 
-.form-img {
-    border-radius: 0 2rem 2rem 0;
-}
-/*! endLogin */
-
-/*! Register */
-
-.register-form {
-    width: 910px;
-    height: 552px;
-    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
-    color: white;
-    letter-spacing: 0.06rem;
-    display: flex;
-    justify-content: center;
-}
-
-.row-back {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.row-back a .link-back {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 86.77px;
-    height: 22.2px;
-    transition: all 0.5s ease;
-    color: #c8c8c8;
-}
-
-.row-back a .link-back:hover {
-    font-size: 14px;
-    color: white;
-}
-
-.header .title-register {
-    font-size: 1.3rem;
-    margin-top: 0.7rem;
-}
-
-.form-regis label {
-    font-size: 0.9rem;
-}
-
-.section-kelas {
+@media (min-width: 1024px) {
+  body .login-form .form-body form .row-btn-login {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-top: 40px;
+  }
 }
 
-.section-kelas .form-regis {
-    margin: 0.3rem 0 -1rem 0;
+body .login-form .form-body form .row-btn-login .remember-me {
+  display: flex;
+  align-items: center;
 }
 
-.container-select {
-    display: flex;
-    align-items: center;
-    margin-top: 0.8rem;
-    height: 30px;
+body .login-form .form-body form .row-btn-login .remember-me input[type=checkbox] {
+  width: 1.2rem;
+  height: 1.2rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  border: 2px solid #d4d4d4;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
-/* Reset Select */
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    outline: none;
-    box-shadow: none;
-    border: none;
-    background: none;
-    background-image: none;
-    letter-spacing: 0.1em;
-    border-bottom: 1px solid white;
+@media (min-width: 1024px) {
+  body .login-form .form-body form .row-btn-login .remember-me input[type=checkbox] {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  body .login-form .form-body form .row-btn-login .remember-me input[type=checkbox]::after {
+    font-size: 0.7rem;
+  }
+}
+
+body .login-form .form-body form .row-btn-login .remember-me input[type=checkbox]:hover,
+body .login-form .form-body form .row-btn-login .remember-me input[type=checkbox]:active {
+  border-color: white;
+}
+
+body .login-form .form-body form .row-btn-login .remember-me input[type=checkbox]:checked,
+body .login-form .form-body form .row-btn-login .remember-me input[type=checkbox]:active {
+  background-color: #d4d4d4;
+}
+
+body .login-form .form-body form .row-btn-login .remember-me input[type=checkbox]:checked:hover,
+body .login-form .form-body form .row-btn-login .remember-me input[type=checkbox]:checked:active {
+  background-color: white;
+}
+
+body .login-form .form-body form .row-btn-login .remember-me input[type=checkbox]::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 12px;
+  content: "\F00C";
+  color: #483bec;
+  display: none;
+}
+
+body .login-form .form-body form .row-btn-login .remember-me input[type=checkbox]:checked::after {
+  display: block;
+}
+
+body .login-form .form-body form .row-btn-login .remember-me label {
+  margin-left: 0.4rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+body .login-form .form-body form .row-btn-login .btn {
+  margin-top: 15px;
+  height: 2.5rem;
+  width: 100%;
+  background: #d6d6d6;
+  border: transparent;
+  color: #493beb;
+  border-radius: 30px;
+  letter-spacing: 0.06em;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  will-change: background-color, color;
+}
+
+body .login-form .form-body form .row-btn-login .btn:hover,
+body .login-form .form-body form .row-btn-login .btn:active {
+  background-color: white;
+  color: #3427ca;
+}
+
+@media (min-width: 1024px) {
+  body .login-form .form-body form .row-btn-login .btn {
+    margin-top: initial;
+    height: 2.5rem;
+    width: 40%;
+    background: #d6d6d6;
+    border: transparent;
+    color: #493beb;
+    border-radius: 30px;
+    letter-spacing: 0.06em;
+    font-size: 1rem;
     font-family: "Poppins", sans-serif;
-}
-/* Remove IE arrow */
-select::-ms-expand {
-    display: none;
-}
-/* Custom Select */
-.select {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 7rem;
-    height: 3.5rem;
-    background: none;
-    overflow: hidden;
-    margin-bottom: 10px;
-}
-select {
-    flex: 1;
-    color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    will-change: background-color, color;
+  }
+
+  body .login-form .form-body form .row-btn-login .btn:hover,
+  body .login-form .form-body form .row-btn-login .btn:active {
+    background-color: white;
+    color: #3427ca;
+  }
 }
 
-select option:disabled{
-    display: none;
+body .login-form .form-body .goto-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-select option {
-    color: black;
+body .login-form .form-body .goto-register .batas {
+  width: 80%;
+  margin: 1rem 0 1rem 0;
+  border-bottom: 1px solid white;
 }
 
-/* Arrow */
-.select::after {
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 0.9rem;
-    position: absolute;
-    top: 30px;
-    right: 0;
-    background: none;
-    cursor: pointer;
-    color: #d8d8d8;
+body .login-form .form-body .goto-register a {
+  color: #dbdbdb;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  will-change: color;
+  text-decoration: underline;
+}
+
+body .login-form .form-body .goto-register a:hover {
+  color: white;
+}
+
+body .login-form .form-img {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  body .login-form .form-img {
+    display: inline;
+    height: 600px;
+    border-radius: 0 2rem 2rem 0;
+    border: none;
     pointer-events: none;
-    -webkit-transition: 0.25s all ease;
-    -o-transition: 0.25s all ease;
-    transition: 0.25s all ease;
-}
-/* Transition */
-.select:hover::after {
-    color: whitesmoke;
-    transform: rotate(180deg);
+  }
 }
 
-.section-password {
-    display: flex;
-    justify-content: space-between;
-    margin-top: -1rem;
+body .register-form {
+  width: 100%;
+  height: 600px;
+  filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+  color: white;
+  letter-spacing: 0.06rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.section-password .form-regis {
-    width: 45%;
+@media (min-width: 1024px) {
+  body .register-form {
+    align-items: initial;
+  }
 }
 
-.row-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1.1rem 0 1.1rem 0;
+body .register-form .form-body {
+  width: 100%;
+  background: #483bec;
+  padding: 2rem;
+  position: relative;
 }
 
-/* ! End Register */
-
-/* ! Forgot Password */
-
-.fpw-form {
-    width: 45rem;
-    height: 29rem;
-    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
-    color: white;
-    letter-spacing: 0.06rem;
-    display: flex;
-    justify-content: center;
+@media (min-width: 768px) {
+  body .register-form .form-body {
+    width: 80%;
+    padding: 2rem 3rem;
+    border-radius: 2rem;
+  }
 }
 
-.form-body-fpw {
-    width: 45rem;
-    height: 29rem;
-    background: #483bec;
-    border-radius: 2rem 2rem 2rem 2rem;
-    padding: 1.4rem 6rem 3rem 6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+@media (min-width: 1024px) {
+  body .register-form .form-body {
+    width: 600px;
+    border-radius: 2rem 0 0 2rem;
+  }
 }
 
-.back-fpw {
-    position: absolute;
-    top: 29px;
+body .register-form .form-body .back {
+  position: absolute;
+  top: -40px;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  height: 22.2px;
+  color: white;
+  font-size: 15px;
+  transition: font-size 0.3s ease, color 0.3s ease;
+  will-change: font-size, color;
 }
 
-.container-fpw {
-    height: 18rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+body .register-form .form-body .back:active {
+  font-size: 16px;
 }
 
-.title-fpw {
+body .register-form .form-body .back span {
+  margin-left: 5px;
+}
+
+body .register-form .form-body .header {
+  color: white;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+body .register-form .form-body form .formel {
+  margin: 1rem 0 1rem 0;
+  color: #dbdbdb;
+  transition: all 0.4s ease;
+}
+
+@media (min-width: 1024px) {
+  body .register-form .form-body form .formel {
+    margin: 20px 0 20px 0;
+  }
+}
+
+body .register-form .form-body form .formel:hover {
+  color: white;
+}
+
+body .register-form .form-body form .formel label {
+  display: block;
+  font-size: 1rem;
+}
+
+@media (min-width: 1024px) {
+  body .register-form .form-body form .formel label {
     font-size: 1.1rem;
-    letter-spacing: 0.2rem;
+  }
 }
 
-.desc_fpw p {
-    font-size: 0.8rem;
-    text-align: center;
-    color: #dbdbdb;
-    transition: all 0.5s ease;
-}
-.desc_fpw p:hover {
-    font-size: 12px;
-    color: white;
-}
-
-.formel-fpw {
-    margin: 2rem 0rem 2rem 0rem;
-    position: relative;
-    top: 10px;
+body .register-form .form-body form .formel .form-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0.6rem 0.2rem 0.1rem 0.2rem;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  border-bottom: 1px solid white !important;
+  width: 100%;
+  transition: padding 0.5s ease;
 }
 
-.btn-fpw {
-    position: relative;
-    top: 40px;
+body .register-form .form-body form .formel .form-input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.8rem;
 }
 
-/* ! End Forgot-Password */
-
-/* ! Reset Password */
-
-.rpw-form {
-    width: 45rem;
-    height: 30rem;
-    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
-    color: white;
-    letter-spacing: 0.06rem;
-    display: flex;
-    justify-content: center;
+body .register-form .form-body form .formel .form-input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.8rem;
 }
 
-.form-body-rpw {
-    width: 45rem;
-    height: 30rem;
-    background: #483bec;
-    border-radius: 2rem 2rem 2rem 2rem;
-    padding: 3rem 6rem 3rem 6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+body .register-form .form-body form .formel .form-input::placeholder {
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.8rem;
 }
 
-.header-rpw {
-    margin-bottom: -1.5rem;
+body .register-form .form-body form .formel .form-input.is-invalid {
+  border-color: red !important;
 }
+
+body .register-form .form-body form .formel span.is-invalid {
+  border-color: red !important;
+}
+
+body .register-form .form-body form .section-kelas {
+  display: flex;
+  justify-content: space-between;
+}
+
+body .register-form .form-body form .section-kelas .formel {
+  width: 6rem;
+  margin: 1rem 0 1rem 0;
+}
+
+@media (min-width: 624px) {
+  body .register-form .form-body form .section-kelas .formel {
+    width: 9rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body .register-form .form-body form .section-kelas .formel {
+    margin: 20px 0 20px 0;
+    width: 7rem;
+  }
+}
+
+body .register-form .form-body form .section-kelas .formel .select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: none;
+}
+
+body .register-form .form-body form .section-kelas .formel .select::after {
+  content: "\F107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1rem;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: none;
+  cursor: pointer;
+  color: #d8d8d8;
+  pointer-events: none;
+  transition: 0.25s all ease;
+}
+
+body .register-form .form-body form .section-kelas .formel .select:hover::after {
+  color: whitesmoke;
+  transform: rotate(180deg);
+}
+
+body .register-form .form-body form .section-kelas .formel .select label {
+  font-size: 1rem;
+}
+
+@media (min-width: 1024px) {
+  body .register-form .form-body form .section-kelas .formel .select label {
+    font-size: 1.1rem;
+  }
+}
+
+body .register-form .form-body form .section-kelas .formel .select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  background: none;
+  background-image: none;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid white;
+  font-family: "Poppins", sans-serif;
+  flex: 1;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+body .register-form .form-body form .section-kelas .formel .select select::-ms-expand {
+  display: none;
+}
+
+body .register-form .form-body form .section-kelas .formel .select select option {
+  color: black;
+}
+
+body .register-form .form-body form .section-kelas .formel .select select option:disabled {
+  display: none;
+}
+
+body .register-form .form-body form .section-password {
+  display: flex;
+  justify-content: space-between;
+}
+
+body .register-form .form-body form .section-password .formel {
+  width: 45%;
+  margin: 1rem 0 1rem 0;
+}
+
+@media (min-width: 1024px) {
+  body .register-form .form-body form .section-password .formel {
+    margin: 20px 0 20px 0;
+  }
+}
+
+body .register-form .form-body form .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  height: 2.5rem;
+  width: 100%;
+  background: #d6d6d6;
+  border: transparent;
+  color: #493beb;
+  border-radius: 30px;
+  letter-spacing: 0.06em;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  will-change: background-color, color;
+}
+
+body .register-form .form-body form .btn:hover,
+body .register-form .form-body form .btn:active {
+  background-color: white;
+  color: #3427ca;
+}
+
+body .register-form .form-img {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  body .register-form .form-img {
+    display: initial;
+    height: 600px;
+    border-radius: 0 2rem 2rem 0;
+    border: none;
+    pointer-events: none;
+  }
+}
+
+body .fpw-form {
+  width: 100%;
+  filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+  color: white;
+  letter-spacing: 0.06rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  body .fpw-form {
+    align-items: initial;
+  }
+}
+
+body .fpw-form .form-body {
+  width: 100%;
+  background: #483bec;
+  padding: 2.4rem 3rem;
+  position: relative;
+}
+
+@media (min-width: 624px) {
+  body .fpw-form .form-body {
+    width: 80%;
+    border-radius: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body .fpw-form .form-body {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  body .fpw-form .form-body {
+    width: 54%;
+  }
+}
+
+@media (min-width: 1280px) {
+  body .fpw-form .form-body {
+    width: 46%;
+  }
+}
+
+@media (min-width: 1536px) {
+  body .fpw-form .form-body {
+    width: 36%;
+  }
+}
+
+body .fpw-form .form-body .row-back {
+  position: absolute;
+  top: -40px;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  height: 22.2px;
+  color: white;
+  font-size: 15px;
+  transition: font-size 0.3s ease;
+  will-change: font-size;
+}
+
+body .fpw-form .form-body .row-back:active {
+  font-size: 16px;
+}
+
+body .fpw-form .form-body .row-back span {
+  margin-left: 5px;
+}
+
+body .fpw-form .form-body .header {
+  color: white;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+}
+
+body .fpw-form .form-body .desc_fpw {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #dbdbdb;
+}
+
+body .fpw-form .form-body form .formel {
+  color: #dbdbdb;
+  transition: color 0.4s ease;
+  margin: 35px 0 35px 0;
+}
+
+body .fpw-form .form-body form .formel:hover {
+  color: white;
+}
+
+body .fpw-form .form-body form .formel label {
+  display: block;
+  font-size: 1.1rem;
+}
+
+body .fpw-form .form-body form .formel .form-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0.6rem 0.2rem 0.1rem 0.2rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  border-bottom: 1px solid white !important;
+  width: 100%;
+  margin-top: 5px;
+  transition: padding 0.5s ease;
+}
+
+body .fpw-form .form-body form .formel .form-input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.9rem;
+}
+
+body .fpw-form .form-body form .formel .form-input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.9rem;
+}
+
+body .fpw-form .form-body form .formel .form-input::placeholder {
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.9rem;
+}
+
+body .fpw-form .form-body form .formel .form-input.is-invalid {
+  border-color: red !important;
+}
+
+body .fpw-form .form-body form .formel span.is-invalid {
+  color: #e67676;
+}
+
+body .fpw-form .form-body form .row-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .fpw-form .form-body form .row-btn .btn {
+  margin-top: 20px;
+  height: 2.5rem;
+  width: 100%;
+  background: #d6d6d6;
+  border: transparent;
+  color: #493beb;
+  border-radius: 30px;
+  letter-spacing: 0.06em;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  will-change: background-color, color;
+}
+
+body .fpw-form .form-body form .row-btn .btn:hover,
+body .fpw-form .form-body form .row-btn .btn:active {
+  background-color: white;
+  color: #3427ca;
+}
+
+body .rpw-form {
+  width: 100%;
+  filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+  color: white;
+  letter-spacing: 0.06rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  body .rpw-form {
+    align-items: initial;
+  }
+}
+
+body .rpw-form .form-body {
+  width: 100%;
+  background: #483bec;
+  padding: 2.5rem 3rem;
+  position: relative;
+}
+
+@media (min-width: 624px) {
+  body .rpw-form .form-body {
+    width: 80%;
+    border-radius: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body .rpw-form .form-body {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  body .rpw-form .form-body {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1280px) {
+  body .rpw-form .form-body {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1536px) {
+  body .rpw-form .form-body {
+    width: 40%;
+  }
+}
+
+body .rpw-form .form-body .header {
+  color: white;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  font-size: 1.3rem;
+  letter-spacing: 0.2rem;
+}
+
+@media (min-width: 768px) {
+  body .rpw-form .form-body .header {
+    font-size: 1.4rem;
+  }
+}
+
+body .rpw-form .form-body form .formel {
+  color: #dbdbdb;
+  transition: color 0.4s ease;
+  margin: 25px 0 25px 0;
+}
+
+body .rpw-form .form-body form .formel:hover {
+  color: white;
+}
+
+body .rpw-form .form-body form .formel label {
+  display: block;
+  font-size: 1.1rem;
+}
+
+body .rpw-form .form-body form .formel .form-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0.6rem 0.2rem 0.1rem 0.2rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  border-bottom: 1px solid white !important;
+  width: 100%;
+  margin-top: 5px;
+  transition: padding 0.5s ease;
+}
+
+body .rpw-form .form-body form .formel .form-input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.9rem;
+}
+
+body .rpw-form .form-body form .formel .form-input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.9rem;
+}
+
+body .rpw-form .form-body form .formel .form-input::placeholder {
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.9rem;
+}
+
+body .rpw-form .form-body form .formel .form-input.is-invalid {
+  border-color: red !important;
+}
+
+body .rpw-form .form-body form .formel span.is-invalid {
+  color: #e67676;
+}
+
+body .rpw-form .form-body form .row-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .rpw-form .form-body form .row-btn .btn {
+  margin-top: 20px;
+  height: 2.5rem;
+  width: 100%;
+  background: #d6d6d6;
+  border: transparent;
+  color: #493beb;
+  border-radius: 30px;
+  letter-spacing: 0.06em;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  will-change: background-color, color;
+}
+
+body .rpw-form .form-body form .row-btn .btn:hover,
+body .rpw-form .form-body form .row-btn .btn:active {
+  background-color: white;
+  color: #3427ca;
+}
+

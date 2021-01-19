@@ -1,0 +1,229 @@
+.login-form {
+    width: 100%;
+    height: 600px;
+    -webkit-filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+    border: none;
+    color: white;
+    letter-spacing: 0.06rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include media(">=laptop") {
+        align-items: initial;
+    }
+
+    .form-body {
+        width: 100%;
+        background: #483bec;
+        padding: 2.5rem 2rem 2.5rem 2rem;
+        @include header(3rem, 0.9rem, 45px);
+        @include media(">=tablet") {
+            width: 80%;
+            border-radius: 2rem;
+            padding: 2rem 3rem 3rem 3rem;
+        }
+        @include media(">=laptop") {
+            width: 502px;
+            border-radius: 2rem 0 0 2rem;
+            padding: 2.5rem;
+            @include header(3.3rem, 0.9rem, 50px);
+        }
+
+        form {
+            max-height: 100%;
+
+            .formel {
+                color: #dbdbdb;
+                transition: color 0.4s ease;
+                margin: 30px 0 30px 0;
+
+                &:hover {
+                    color: white;
+                }
+
+                label {
+                    display: block;
+                    font-size: 1.1rem;
+                }
+
+                .form-input {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    padding: 0.6rem 0.2rem 0.1rem 0.2rem;
+                    font-size: 1rem;
+                    font-family: "Poppins", sans-serif;
+                    letter-spacing: 1px;
+                    color: white;
+                    border-bottom: 1px solid white !important;
+                    width: 100%;
+                    margin-top: 5px;
+                    transition: padding 0.5s ease;
+
+                    &::-webkit-input-placeholder {
+                        color: rgba(255, 255, 255, 0.438);
+                        font-size: 0.9rem;
+                    }
+
+                    &::-moz-placeholder {
+                        color: rgba(255, 255, 255, 0.438);
+                        font-size: 0.9rem;
+                    }
+
+                    &:-ms-input-placeholder {
+                        color: rgba(255, 255, 255, 0.438);
+                        font-size: 0.9rem;
+                    }
+
+                    &::-ms-input-placeholder {
+                        color: rgba(255, 255, 255, 0.438);
+                        font-size: 0.9rem;
+                    }
+
+                    &::placeholder {
+                        color: rgba(255, 255, 255, 0.438);
+                        font-size: 0.9rem;
+                    }
+
+                    &.is-invalid {
+                        @include is-invalid;
+                    }
+                }
+
+                span {
+                    &.is-invalid {
+                        color: rgb(230, 118, 118);
+                    }
+                }
+            }
+
+            .goto-fpw {
+                font-size: 0.9rem;
+                color: #d4d4d4;
+                text-decoration: underline;
+                transition: color 0.3s ease;
+                will-change: color;
+
+                &:hover {
+                    color: white;
+                }
+            }
+
+            .row-btn-login {
+                margin-top: 50px;
+                @include media(">=laptop") {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 40px;
+                }
+
+                .remember-me {
+                    display: flex;
+                    align-items: center;
+
+                    input[type="checkbox"] {
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        appearance: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        background-color: transparent;
+                        border: 2px solid #d4d4d4;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.2s ease;
+                        @include media(">=laptop") {
+                            width: 1.1rem;
+                            height: 1.1rem;
+                            &::after {
+                                font-size: 0.7rem;
+                            }
+                        }
+
+                        &:hover,
+                        &:active {
+                            border-color: white;
+                        }
+
+                        &:checked,
+                        &:active {
+                            background-color: #d4d4d4;
+                        }
+
+                        &:checked:hover,
+                        &:checked:active {
+                            background-color: white;
+                        }
+
+                        &::after {
+                            font-family: "Font Awesome 5 Free";
+                            font-weight: 900;
+                            font-size: 12px;
+                            content: "\f00c";
+                            color: #483bec;
+                            display: none;
+                        }
+
+                        &:checked::after {
+                            display: block;
+                        }
+                    }
+
+                    label {
+                        margin-left: 0.4rem;
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                    }
+                }
+
+                .btn {
+                    margin-top: 15px;
+                    @include btn(2.5rem, 100%, #d6d6d6);
+                    @include media(">=laptop") {
+                        margin-top: initial;
+                        @include btn(2.5rem, 40%, #d6d6d6);
+                    }
+                }
+            }
+        }
+
+        .goto-register {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .batas {
+                width: 80%;
+                margin: 1rem 0 1rem 0;
+                border-bottom: 1px solid white;
+            }
+
+            a {
+                color: #dbdbdb;
+                font-size: 1rem;
+                transition: color 0.3s ease;
+                will-change: color;
+                text-decoration: underline;
+
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .form-img {
+        display: none;
+        @include media(">=laptop") {
+            display: inline;
+            height: 600px;
+            border-radius: 0 2rem 2rem 0;
+            border: none;
+            pointer-events: none;
+        }
+    }
+}

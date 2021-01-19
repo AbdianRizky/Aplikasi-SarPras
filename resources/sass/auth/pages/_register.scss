@@ -1,0 +1,249 @@
+.register-form {
+    width: 100%;
+    height: 600px;
+    -webkit-filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.5));
+    color: white;
+    letter-spacing: 0.06rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include media(">=laptop") {
+        align-items: initial;
+    }
+
+    .form-body {
+        width: 100%;
+        background: #483bec;
+        padding: 2rem;
+        position: relative;
+        @include media(">=tablet") {
+            width: 80%;
+            padding: 2rem 3rem;
+            border-radius: 2rem;
+        }
+        @include media(">=laptop") {
+            width: 600px;
+            border-radius: 2rem 0 0 2rem;
+        }
+
+        .back {
+            position: absolute;
+            top: -40px;
+            left: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100px;
+            height: 22.2px;
+            color: white;
+            font-size: 15px;
+            transition: font-size 0.3s ease, color 0.3s ease;
+            will-change: font-size, color;
+
+            &:active {
+                font-size: 16px;
+            }
+
+            span {
+                margin-left: 5px;
+            }
+        }
+
+        .header {
+            color: white;
+            font-weight: normal;
+            font-style: normal;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        form {
+            .formel {
+                margin: 1rem 0 1rem 0;
+                color: #dbdbdb;
+                transition: all 0.4s ease;
+                @include media(">=laptop") {
+                    margin: 20px 0 20px 0;
+                }
+
+                &:hover {
+                    color: white;
+                }
+
+                label {
+                    display: block;
+                    font-size: 1rem;
+                    @include media(">=laptop") {
+                        font-size: 1.1rem;
+                    }
+                }
+
+                .form-input {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    padding: 0.6rem 0.2rem 0.1rem 0.2rem;
+                    font-size: 0.9rem;
+                    font-family: "Poppins", sans-serif;
+                    letter-spacing: 1px;
+                    color: white;
+                    border-bottom: 1px solid white !important;
+                    width: 100%;
+                    transition: padding 0.5s ease;
+
+                    &::-webkit-input-placeholder {
+                        color: rgba(255, 255, 255, 0.438);
+                        font-size: 0.8rem;
+                    }
+
+                    &::-moz-placeholder {
+                        color: rgba(255, 255, 255, 0.438);
+                        font-size: 0.8rem;
+                    }
+
+                    &:-ms-input-placeholder {
+                        color: rgba(255, 255, 255, 0.438);
+                        font-size: 0.8rem;
+                    }
+
+                    &::-ms-input-placeholder {
+                        color: rgba(255, 255, 255, 0.438);
+                        font-size: 0.8rem;
+                    }
+
+                    &::placeholder {
+                        color: rgba(255, 255, 255, 0.438);
+                        font-size: 0.8rem;
+                    }
+
+                    &.is-invalid {
+                        @include is-invalid;
+                    }
+                }
+
+                span {
+                    &.is-invalid {
+                        @include is-invalid;
+                    }
+                }
+            }
+
+            .section-kelas {
+                display: flex;
+                justify-content: space-between;
+
+                .formel {
+                    width: 6rem;
+                    margin: 1rem 0 1rem 0;
+                    @include media(">=phone") {
+                        width: 9rem;
+                    }
+                    @include media(">=laptop") {
+                        margin: 20px 0 20px 0;
+                        width: 7rem;
+                    }
+
+                    .select {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        background: none;
+
+                        &::after {
+                            content: "\f107";
+                            font-family: "Font Awesome 5 Free";
+                            font-weight: 900;
+                            font-size: 1rem;
+                            position: absolute;
+                            top: 40px;
+                            right: 0;
+                            background: none;
+                            cursor: pointer;
+                            color: #d8d8d8;
+                            pointer-events: none;
+                            transition: 0.25s all ease;
+                        }
+
+                        &:hover::after {
+                            color: whitesmoke;
+                            transform: rotate(180deg);
+                        }
+
+                        label {
+                            font-size: 1rem;
+                            @include media(">=laptop") {
+                                font-size: 1.1rem;
+                            }
+                        }
+
+                        select {
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            -ms-appearance: none;
+                            appearance: none;
+                            outline: none;
+                            box-shadow: none;
+                            border: none;
+                            background: none;
+                            background-image: none;
+                            letter-spacing: 0.1em;
+                            border-bottom: 1px solid white;
+                            font-family: "Poppins", sans-serif;
+                            flex: 1;
+                            color: #fff;
+                            cursor: pointer;
+                            margin-top: 10px;
+                            font-size: 0.9rem;
+
+                            &::-ms-expand {
+                                display: none;
+                            }
+
+                            option {
+                                color: black;
+
+                                &:disabled {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .section-password {
+                display: flex;
+                justify-content: space-between;
+
+                .formel {
+                    width: 45%;
+                    margin: 1rem 0 1rem 0;
+                    @include media(">=laptop") {
+                        margin: 20px 0 20px 0;
+                    }
+                }
+            }
+
+            .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 2rem;
+                @include btn(2.5rem, 100%, #d6d6d6);
+            }
+        }
+    }
+
+    .form-img {
+        display: none;
+        @include media(">=laptop") {
+            display: initial;
+            height: 600px;
+            border-radius: 0 2rem 2rem 0;
+            border: none;
+            pointer-events: none;
+        }
+    }
+}

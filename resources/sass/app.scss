@@ -1,8 +1,9 @@
-@import 'base/reset';
-@import 'base/typhography';
-@import 'base/color';
-@import 'base/include-media';
-@import 'layout/navbar';
-@import 'layout/sidebar';
-@import 'layout/content';
-@import 'layout/modal'
+@import "base/variables";
+@import "base/reset";
+@import "base/typhography";
+@import "base/color";
+@import "base/include-media";
+@import "base/mixins";
+@import "app/pages/etalase";
+@import "app/pages/about";
+@import "app/pages/profil";

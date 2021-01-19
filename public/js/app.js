@@ -30217,17 +30217,30 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var profile = $(".profile-toggle");
-var dropdownSect = $("ul");
 var box = $(".box");
 var modalStatus = $("#modal-status");
 var modal = $(".modal");
 var modalExit = $(".modal-exit");
+var wrapperMenu = $(".wrapper__menu");
+var nav = $("#nav");
+var userOnNav = $("#userOnNav");
 $(document).ready(function () {
-  //! Dropdown Toggle
-  profile.click(function () {
-    dropdownSect.slideToggle(280);
-  }).mouseleave(function () {
-    dropdownSect.slideUp(280);
+  setInterval(function () {
+    // console.log($(window).innerWidth());
+    $(window).innerWidth() >= 768 ? userOnNav.empty().append("Profil") : $(window).innerWidth() < 768 ? userOnNav.empty().append("Username") : "";
+  });
+  profile.click(function (e) {
+    e.preventDefault();
+
+    if ($(window).innerWidth() >= 768) {
+      wrapperMenu.toggleClass("open");
+      nav.toggleClass("active");
+    } else {
+      wrapperMenu.children("#1").toggleClass("menu-active1");
+      wrapperMenu.children("#2").toggleClass("menu-active2");
+      wrapperMenu.children("#3").toggleClass("menu-active3");
+      nav.toggleClass("active");
+    }
   }); //! Modal Toggle
 
   box.click(function (e) {
@@ -30239,7 +30252,8 @@ $(document).ready(function () {
     });
   }); //! Modal Exit
 
-  modalExit.click(function () {
+  modalExit.click(function (e) {
+    e.preventDefault();
     modalStatus.addClass("hidden").removeClass("active");
     modal.css({
       transform: "translateY(30px)",
@@ -30294,15 +30308,39 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/auth.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/auth.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/welcome.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/welcome.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!**********************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/auth.scss ./resources/sass/welcome.scss ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Development\Web\Project\KKSI\Aplikasi-SarPras\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Development\Web\Project\KKSI\Aplikasi-SarPras\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Development\Web\Project\KKSI\Aplikasi-SarPras\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! D:\Development\Web\Project\KKSI\Aplikasi-SarPras\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Development\Web\Project\KKSI\Aplikasi-SarPras\resources\sass\auth.scss */"./resources/sass/auth.scss");
+module.exports = __webpack_require__(/*! D:\Development\Web\Project\KKSI\Aplikasi-SarPras\resources\sass\welcome.scss */"./resources/sass/welcome.scss");
 
 
 /***/ })

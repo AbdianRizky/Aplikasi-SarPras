@@ -1,0 +1,24 @@
+@import "base/variables";
+@import "base/reset";
+@import "base/typhography";
+@import "base/color";
+@import "base/include-media";
+@import "base/mixins";
+
+body {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #574cf3;
+    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+    letter-spacing: 0.06em;
+    font-size: 0.9rem;
+    @import "auth/pages/login";
+    @import "auth/pages/register";
+    @import "auth/pages/forgot-password";
+    @import "auth/pages/reset-password";
+}
