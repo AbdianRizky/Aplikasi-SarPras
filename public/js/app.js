@@ -30216,12 +30216,9 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-var profile = $(".profile-toggle");
-var box = $(".box");
-var modalStatus = $("#modal-status");
-var modal = $(".modal");
-var modalExit = $(".modal-exit");
+var dropdownToggle = $(".dropdown-toggle");
 var wrapperMenu = $(".wrapper__menu");
+var wrapperMenuChildren = wrapperMenu.children();
 var nav = $("#nav");
 var userOnNav = $("#userOnNav");
 $(document).ready(function () {
@@ -30229,35 +30226,21 @@ $(document).ready(function () {
     // console.log($(window).innerWidth());
     $(window).innerWidth() >= 768 ? userOnNav.empty().append("Profil") : $(window).innerWidth() < 768 ? userOnNav.empty().append("Username") : "";
   });
-  profile.click(function (e) {
+  $(window).innerWidth() >= 768 ? dropdownToggle.click(function (e) {
     e.preventDefault();
-
-    if ($(window).innerWidth() >= 768) {
-      wrapperMenu.toggleClass("open");
-      nav.toggleClass("active");
-    } else {
-      wrapperMenu.children("#1").toggleClass("menu-active1");
-      wrapperMenu.children("#2").toggleClass("menu-active2");
-      wrapperMenu.children("#3").toggleClass("menu-active3");
-      nav.toggleClass("active");
-    }
-  }); //! Modal Toggle
-
-  box.click(function (e) {
-    e.preventDefault();
-    modalStatus.addClass("active").removeClass("hidden");
-    modal.css({
-      transform: "translateY(0)",
-      opacity: "1"
+    $.each(wrapperMenuChildren, function (i, div) {
+      $(div).toggleClass("menu-active" + i.toString());
     });
-  }); //! Modal Exit
-
-  modalExit.click(function (e) {
+    nav.toggleClass("active");
+  }) : dropdownToggle.mouseenter(function (e) {
     e.preventDefault();
-    modalStatus.addClass("hidden").removeClass("active");
-    modal.css({
-      transform: "translateY(30px)",
-      opacity: "0"
+    $.each(wrapperMenuChildren, function (i, div) {
+      $(div).addClass("menu-active" + i.toString());
+    });
+  }).mouseleave(function (e) {
+    e.preventDefault();
+    $.each(wrapperMenuChildren, function (i, div) {
+      $(div).removeClass("menu-active" + i.toString());
     });
   });
 });

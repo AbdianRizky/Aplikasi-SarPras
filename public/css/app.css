@@ -106,7 +106,7 @@ a {
   }
 }
 
-.navbar .profile-toggle {
+.navbar .dropdown-toggle {
   width: 200px;
   height: 70%;
   display: flex;
@@ -115,18 +115,49 @@ a {
 }
 
 @media (min-width: 768px) {
-  .navbar .profile-toggle {
+  .navbar .dropdown-toggle {
     width: 250px;
     height: 100%;
     cursor: pointer;
     font-size: 17px;
-    transition: all 0.3s ease;
     display: flex;
+  }
+
+  .navbar .dropdown-toggle:hover .wrapper__menu {
+    transition: transform 0.2s ease;
+    transform: rotate(90deg);
+  }
+
+  .navbar .dropdown-toggle:hover .wrapper__menu .line__menu.menu-active0 {
+    transform: rotate(45deg);
+    position: relative;
+    top: -1px;
+    opacity: 1;
+    transition: all 0.3s ease;
+    will-change: all;
+  }
+
+  .navbar .dropdown-toggle:hover .wrapper__menu .line__menu.menu-active1 {
+    transform: rotate(0);
+    position: relative;
+    top: initial;
+    opacity: 0;
+    transition: all 0.3s ease;
+    will-change: all;
+  }
+
+  .navbar .dropdown-toggle:hover .wrapper__menu .line__menu.menu-active2 {
+    transform: rotate(-45deg);
+    position: relative;
+    top: 1px;
+    opacity: 1;
+    transition: all 0.3s ease;
+    will-change: all;
   }
 }
 
-.navbar .profile-toggle .wrapper__menu {
-  width: 20px;
+.navbar .dropdown-toggle .wrapper__menu {
+  width: 37px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -136,27 +167,14 @@ a {
 }
 
 @media (min-width: 768px) {
-  .navbar .profile-toggle .wrapper__menu {
-    width: 40px;
-    height: 50%;
-    align-items: initial;
-    transition: transform 330ms ease-out;
-  }
-
-  .navbar .profile-toggle .wrapper__menu.open {
-    transform: rotate(-45deg);
-  }
-
-  .navbar .profile-toggle .wrapper__menu.open .line__menu.start {
-    transform: rotate(-90deg) translateX(-3px);
-  }
-
-  .navbar .profile-toggle .wrapper__menu.open .line__menu.end {
-    transform: rotate(-90deg) translateX(3px);
+  .navbar .dropdown-toggle .wrapper__menu {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
   }
 }
 
-.navbar .profile-toggle .wrapper__menu .line__menu {
+.navbar .dropdown-toggle .wrapper__menu .line__menu {
   background-color: white;
   border-radius: 5px;
   width: 100%;
@@ -166,61 +184,17 @@ a {
 }
 
 @media (min-width: 768px) {
-  .navbar .profile-toggle .wrapper__menu .line__menu {
-    border-radius: 3px;
-    width: 50%;
-    height: 3.5px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .navbar .profile-toggle .wrapper__menu .line__menu.half {
-    width: 50%;
-    transform-origin: center;
-  }
-
-  .navbar .profile-toggle .wrapper__menu .line__menu.start {
-    justify-content: flex-start;
-    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
-    transform-origin: right;
-  }
-
-  .navbar .profile-toggle .wrapper__menu .line__menu.end {
-    justify-content: flex-end;
-    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
-    transform-origin: left;
+  .navbar .dropdown-toggle .wrapper__menu .line__menu {
+    height: 2px;
   }
 }
 
-.navbar .profile-toggle .wrapper__menu .menu-active1 {
-  transform: rotate(45deg);
-  position: relative;
-  top: -1.5px;
-  transition: all 0.3s ease;
-  will-change: all;
-}
-
-.navbar .profile-toggle .wrapper__menu .menu-active2 {
-  transform: translate(-100%);
-  opacity: 0;
-  transition: all 0.3s ease;
-  justify-content: center;
-  will-change: opacity, transform;
-}
-
-.navbar .profile-toggle .wrapper__menu .menu-active3 {
-  transform: rotate(-45deg);
-  position: relative;
-  transition: all 0.3s ease;
-  will-change: all;
-}
-
-.navbar .profile-toggle .profile {
+.navbar .dropdown-toggle .profile {
   display: none;
 }
 
 @media (min-width: 768px) {
-  .navbar .profile-toggle .profile {
+  .navbar .dropdown-toggle .profile {
     width: 200px;
     height: 100%;
     display: flex;
@@ -228,11 +202,11 @@ a {
     align-items: center;
   }
 
-  .navbar .profile-toggle .profile:hover img {
+  .navbar .dropdown-toggle .profile:hover img {
     box-shadow: 7px 4px 0 0 #000000;
   }
 
-  .navbar .profile-toggle .profile img {
+  .navbar .dropdown-toggle .profile img {
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     width: 50px;
     height: 50px;
@@ -311,7 +285,6 @@ a {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  transition: all 0.3s ease;
 }
 
 .navbar nav .nav__item::before {
@@ -322,7 +295,7 @@ a {
   left: -100%;
   border-bottom: 1px solid white;
   pointer-events: none;
-  transition: left 0.3s ease-out;
+  transition: left 0.3s ease-out 0.1s;
 }
 
 .navbar nav .nav__item:hover::before {

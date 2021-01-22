@@ -1,11 +1,8 @@
 require("./bootstrap");
 
-const profile = $(".profile-toggle");
-const box = $(".box");
-const modalStatus = $("#modal-status");
-const modal = $(".modal");
-const modalExit = $(".modal-exit");
+const dropdownToggle = $(".dropdown-toggle");
 const wrapperMenu = $(".wrapper__menu");
+const wrapperMenuChildren = wrapperMenu.children();
 const nav = $("#nav");
 const userOnNav = $("#userOnNav");
 
@@ -19,36 +16,25 @@ $(document).ready(() => {
             : "";
     });
 
-    profile.click(e => {
-        e.preventDefault();
-        if ($(window).innerWidth() >= 768) {
-            wrapperMenu.toggleClass("open");
-            nav.toggleClass("active");
-        } else {
-            wrapperMenu.children("#1").toggleClass("menu-active1");
-            wrapperMenu.children("#2").toggleClass("menu-active2");
-            wrapperMenu.children("#3").toggleClass("menu-active3");
-            nav.toggleClass("active");
-        }
-    });
-
-    //! Modal Toggle
-    box.click(e => {
-        e.preventDefault();
-        modalStatus.addClass("active").removeClass("hidden");
-        modal.css({
-            transform: "translateY(0)",
-            opacity: "1"
-        });
-    });
-
-    //! Modal Exit
-    modalExit.click(e => {
-        e.preventDefault();
-        modalStatus.addClass("hidden").removeClass("active");
-        modal.css({
-            transform: "translateY(30px)",
-            opacity: "0"
-        });
-    });
+    $(window).innerWidth() >= 768
+        ? dropdownToggle.click(e => {
+              e.preventDefault();
+              $.each(wrapperMenuChildren, (i, div) => {
+                  $(div).toggleClass("menu-active" + i.toString());
+              });
+              nav.toggleClass("active");
+          })
+        : dropdownToggle
+              .mouseenter(e => {
+                  e.preventDefault();
+                  $.each(wrapperMenuChildren, (i, div) => {
+                      $(div).addClass("menu-active" + i.toString());
+                  });
+              })
+              .mouseleave(e => {
+                  e.preventDefault();
+                  $.each(wrapperMenuChildren, (i, div) => {
+                      $(div).removeClass("menu-active" + i.toString());
+                  });
+              });
 });

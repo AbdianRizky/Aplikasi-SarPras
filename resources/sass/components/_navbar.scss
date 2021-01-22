@@ -60,24 +60,39 @@
         }
     }
 
-    .profile-toggle {
+    .dropdown-toggle {
         width: 200px;
         height: 70%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         @include media(">=tablet") {
             width: 250px;
             height: 100%;
             cursor: pointer;
             font-size: 17px;
-            transition: all 0.3s ease;
             display: flex;
+            &:hover {
+                .wrapper__menu {
+                    transition: transform 0.2s ease;
+                    transform: rotate(90deg);
+                    .line__menu {
+                        &.menu-active0 {
+                            @include menuActive(45deg, -1px, 1);
+                        }
+                        &.menu-active1 {
+                            @include menuActive(0, initial, 0);
+                        }
+                        &.menu-active2 {
+                            @include menuActive(-45deg, 1px, 1);
+                        }
+                    }
+                }
+            }
         }
 
         .wrapper__menu {
-            width: 20px;
+            width: 37px;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -85,21 +100,9 @@
             justify-content: space-between;
             cursor: pointer;
             @include media(">=tablet") {
-                width: 40px;
-                height: 50%;
-                align-items: initial;
-                transition: transform 330ms ease-out;
-                &.open {
-                    transform: rotate(-45deg);
-                    .line__menu {
-                        &.start {
-                            transform: rotate(-90deg) translateX(-3px);
-                        }
-                        &.end {
-                            transform: rotate(-90deg) translateX(3px);
-                        }
-                    }
-                }
+                width: 20px;
+                height: 20px;
+                transition: transform 0.2s ease;
             }
 
             .line__menu {
@@ -110,50 +113,26 @@
                 transform-origin: 0;
                 transition: all 0.3s ease;
                 @include media(">=tablet") {
-                    border-radius: 3px;
-                    width: 50%;
-                    height: 3.5px;
-                    display: flex;
-                    flex-direction: column;
-                    &.half {
-                        width: 50%;
-                        transform-origin: center;
-                    }
-                    &.start {
-                        justify-content: flex-start;
-                        transition: transform 330ms
-                            cubic-bezier(0.54, -0.81, 0.57, 0.57);
-                        transform-origin: right;
-                    }
-                    &.end {
-                        justify-content: flex-end;
-                        transition: transform 330ms
-                            cubic-bezier(0.54, -0.81, 0.57, 0.57);
-                        transform-origin: left;
-                    }
+                    height: 2px;
                 }
-            }
 
-            .menu-active1 {
-                transform: rotate(45deg);
-                position: relative;
-                top: -1.5px;
-                transition: all 0.3s ease;
-                will-change: all;
-            }
-            .menu-active2 {
-                transform: translate(-100%);
-                opacity: 0;
-                transition: all 0.3s ease;
-                justify-content: center;
-                will-change: opacity, transform;
-            }
-            .menu-active3 {
-                transform: rotate(-45deg);
-                position: relative;
-                // top: 2px;
-                transition: all 0.3s ease;
-                will-change: all;
+                // &.menu-active0 {
+                //     @include menuActive(45deg, -0.75px, 1);
+                //     @include media(">=tablet") {
+                //     }
+                // }
+                // &.menu-active1 {
+                //     @include menuActive(45deg, initial, 0);
+                //     transform: translate(-100%);
+                //     @include media(">=tablet") {
+                //         transform: initial;
+                //     }
+                // }
+                // &.menu-active2 {
+                //     @include menuActive(-45deg, 0.75px, 1);
+                //     @include media(">=tablet") {
+                //     }
+                // }
             }
         }
 
@@ -237,7 +216,6 @@
             position: relative;
             overflow: hidden;
             border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-            transition: all 0.3s ease;
             &::before {
                 content: "";
                 width: 100%;
@@ -246,7 +224,7 @@
                 left: -100%;
                 border-bottom: 1px solid white;
                 pointer-events: none;
-                transition: left 0.3s ease-out;
+                transition: left 0.3s ease-out 0.1s;
             }
             &:hover::before {
                 left: 0;
@@ -255,7 +233,6 @@
             &:active {
                 font-size: 16px;
             }
-
             &:nth-child(1) {
                 svg {
                     display: none;
@@ -272,7 +249,6 @@
                     }
                 }
             }
-
             &:nth-child(4) {
                 height: 30px;
                 color: rgb(255, 110, 110);

@@ -206,3 +206,12 @@
         color: rgb(255, 255, 255);
     }
 }
+
+@mixin menuActive($rotate, $top, $opacity) {
+    transform: rotate($rotate);
+    position: relative;
+    top: $top;
+    opacity: $opacity;
+    transition: all 0.3s ease;
+    will-change: all;
+}
