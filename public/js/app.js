@@ -30214,6 +30214,9 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    drop = _require.drop;
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var dropdownToggle = $(".dropdown-toggle");
@@ -30222,26 +30225,12 @@ var wrapperMenuChildren = wrapperMenu.children();
 var nav = $("#nav");
 var userOnNav = $("#userOnNav");
 $(document).ready(function () {
-  setInterval(function () {
-    // console.log($(window).innerWidth());
-    $(window).innerWidth() >= 768 ? userOnNav.empty().append("Profil") : $(window).innerWidth() < 768 ? userOnNav.empty().append("Username") : "";
-  });
-  $(window).innerWidth() >= 768 ? dropdownToggle.click(function (e) {
-    e.preventDefault();
-    $.each(wrapperMenuChildren, function (i, div) {
+  dropdownToggle.click(function () {
+    nav.toggleClass("active"); // console.log($(window).width());
+
+    $(window).width() < 768 ? $.each(wrapperMenuChildren, function (i, div) {
       $(div).toggleClass("menu-active" + i.toString());
-    });
-    nav.toggleClass("active");
-  }) : dropdownToggle.mouseenter(function (e) {
-    e.preventDefault();
-    $.each(wrapperMenuChildren, function (i, div) {
-      $(div).addClass("menu-active" + i.toString());
-    });
-  }).mouseleave(function (e) {
-    e.preventDefault();
-    $.each(wrapperMenuChildren, function (i, div) {
-      $(div).removeClass("menu-active" + i.toString());
-    });
+    }) : wrapperMenu.toggleClass("active");
   });
 });
 

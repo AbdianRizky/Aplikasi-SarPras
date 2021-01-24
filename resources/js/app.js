@@ -1,3 +1,5 @@
+const { drop } = require("lodash");
+
 require("./bootstrap");
 
 const dropdownToggle = $(".dropdown-toggle");
@@ -7,34 +9,13 @@ const nav = $("#nav");
 const userOnNav = $("#userOnNav");
 
 $(document).ready(() => {
-    setInterval(() => {
-        // console.log($(window).innerWidth());
-        $(window).innerWidth() >= 768
-            ? userOnNav.empty().append("Profil")
-            : $(window).innerWidth() < 768
-            ? userOnNav.empty().append("Username")
-            : "";
-    });
-
-    $(window).innerWidth() >= 768
-        ? dropdownToggle.click(e => {
-              e.preventDefault();
-              $.each(wrapperMenuChildren, (i, div) => {
+    dropdownToggle.click(() => {
+        nav.toggleClass("active");
+        // console.log($(window).width());
+        $(window).width() < 768
+            ? $.each(wrapperMenuChildren, (i, div) => {
                   $(div).toggleClass("menu-active" + i.toString());
-              });
-              nav.toggleClass("active");
-          })
-        : dropdownToggle
-              .mouseenter(e => {
-                  e.preventDefault();
-                  $.each(wrapperMenuChildren, (i, div) => {
-                      $(div).addClass("menu-active" + i.toString());
-                  });
               })
-              .mouseleave(e => {
-                  e.preventDefault();
-                  $.each(wrapperMenuChildren, (i, div) => {
-                      $(div).removeClass("menu-active" + i.toString());
-                  });
-              });
+            : wrapperMenu.toggleClass("active");
+    });
 });
