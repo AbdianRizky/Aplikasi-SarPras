@@ -1,4 +1,22 @@
 @import "../../components/navbar";
+
+main {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .search__mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .search {
+            @include searchInput(100%, 35px);
+            @include media(">=lg-laptop") {
+                display: none;
+            }
+        }
+    }
+}
 // main {
 //     display: flex;
 //     justify-content: center;

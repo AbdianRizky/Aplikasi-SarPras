@@ -174,7 +174,7 @@
     }
 }
 
-@mixin sidebarContent() {
+@mixin sidebarContent {
     width: $sidebar-content-width;
     height: $sidebar-content-height;
     background-color: $primary;
@@ -214,4 +214,51 @@
     opacity: $opacity;
     transition: all 0.3s ease;
     will-change: all;
+}
+
+@mixin searchInput($width, $height) {
+    display: flex;
+    width: $width;
+    height: $height;
+    input {
+        width: $width;
+        font-family: $poppins;
+        font-size: 15px;
+        color: $text-secondary;
+        background-color: $secondary;
+        outline: none;
+        border: none;
+        border-radius: 5px 0 0 5px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.45) 0%,
+            rgba(255, 255, 255, 0.6) 75.91%,
+            #ffffff 100.91%
+        );
+        padding: 9px 13px 9px 13px;
+    }
+
+    button {
+        width: $btn-width;
+        height: $height;
+        border-radius: 0 5px 5px 0;
+        border: none;
+        background-color: white;
+        color: $text-secondary;
+        transition: all $transition-primary;
+        outline: none;
+
+        svg {
+            text-align: center;
+            width: 25px;
+            height: 25px;
+        }
+        &:hover {
+            cursor: pointer;
+            background-color: #cacaca;
+            color: white;
+        }
+    }
 }
