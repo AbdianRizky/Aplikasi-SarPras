@@ -1,4 +1,6 @@
-> ## About SarPras
+# SarPras (Sarana & Prasarana)
+
+## About SarPras
 
 SarPras is short for Sarana & Prasarana. This application is made to facilitate controlling school facilities and infrastructure using web application-based technology and implementing the workings of E-Commerce. SarPras was inspired by the problems in Indonesian schools that were quite difficult and monotonous to control the items borrowed or even the teachers who were teaching. Therefore, with the creation of this SarPras, hopefully it can ease the problems that exist in schools and create a high-tech school environment in Indonesia.
 
