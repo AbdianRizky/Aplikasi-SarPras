@@ -221,7 +221,7 @@
     width: $width;
     height: $height;
     input {
-        width: $width;
+        width: calc(#{$width} - #{$btn-width});
         font-family: $poppins;
         font-size: 15px;
         color: $text-secondary;
