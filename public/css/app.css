@@ -134,13 +134,12 @@ a {
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     color: rgba(0, 0, 0, 0.719);
-    background-color: #9E97F5;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.6) 75.91%, #ffffff 100.91%);
     outline: none;
     border: none;
     border-radius: 5px 0 0 5px;
     letter-spacing: 1px;
     font-weight: 600;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.6) 75.91%, #ffffff 100.91%);
     padding: 9px 13px 9px 13px;
   }
 
@@ -460,65 +459,70 @@ a {
   font-size: 14px;
 }
 
-main {
-  padding: 2rem 3rem;
+main .search__wrapper {
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-main .search__mobile {
+@media (min-width: 768px) {
+  main .search__wrapper {
+    padding: 2rem 3rem;
+  }
+}
+
+main .search__wrapper .search__mobile {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-main .search__mobile .search {
+main .search__wrapper .search__mobile .search {
   display: flex;
   width: 100%;
-  height: 35px;
+  height: 40px;
 }
 
-main .search__mobile .search input {
+main .search__wrapper .search__mobile .search input {
   width: calc(100% - 39px);
   font-family: "Poppins", sans-serif;
   font-size: 15px;
-  color: rgba(0, 0, 0, 0.719);
-  background-color: #9E97F5;
+  color: #f8f7ff;
+  background: linear-gradient(90deg, #7d66ff 0%, #7d66ff 60%, rgba(193, 179, 255, 0.45) 100%);
   outline: none;
   border: none;
   border-radius: 5px 0 0 5px;
   letter-spacing: 1px;
   font-weight: 600;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.6) 75.91%, #ffffff 100.91%);
   padding: 9px 13px 9px 13px;
 }
 
-main .search__mobile .search button {
+main .search__wrapper .search__mobile .search button {
   width: 39px;
-  height: 35px;
+  height: 40px;
   border-radius: 0 5px 5px 0;
   border: none;
-  background-color: white;
+  background-color: rgba(193, 179, 255, 0.45);
   color: rgba(0, 0, 0, 0.719);
   transition: all 0.5s ease;
   outline: none;
 }
 
-main .search__mobile .search button svg {
+main .search__wrapper .search__mobile .search button svg {
   text-align: center;
   width: 25px;
   height: 25px;
 }
 
-main .search__mobile .search button:hover {
+main .search__wrapper .search__mobile .search button:hover {
   cursor: pointer;
   background-color: #cacaca;
   color: white;
 }
 
 @media (min-width: 1280px) {
-  main .search__mobile .search {
+  main .search__wrapper .search__mobile .search {
     display: none;
   }
 }

@@ -3,8 +3,10 @@
     <x-app.navbar/>
 
     <main>
-        <section class="search__mobile">
-            <x-app.search/>
+        <section class="search__wrapper">
+            <div class="search__mobile">
+                <x-app.search/>
+            </div>
         </section>
         {{-- <section class="sidebar">
             <x-app.sidebar/>

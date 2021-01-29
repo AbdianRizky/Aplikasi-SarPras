@@ -1,18 +1,35 @@
 @import "../../components/navbar";
 
 main {
-    padding: 2rem 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .search__mobile {
+    .search__wrapper {
+        padding: 1.5rem;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        .search {
-            @include searchInput(100%, 35px);
-            @include media(">=lg-laptop") {
-                display: none;
+        @include media(">=tablet") {
+            padding: 2rem 3rem;
+        }
+
+        .search__mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .search {
+                @include searchInput(
+                    100%,
+                    40px,
+                    linear-gradient(
+                        90deg,
+                        rgb(125, 102, 255) 0%,
+                        rgb(125, 102, 255) 60%,
+                        rgba(193, 179, 255, 0.45) 100%
+                    ),
+                    rgba(193, 179, 255, 0.45),
+                    #f8f7ff
+                );
+                @include media(">=lg-laptop") {
+                    display: none;
+                }
             }
         }
     }

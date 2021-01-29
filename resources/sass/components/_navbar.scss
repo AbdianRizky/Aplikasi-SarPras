@@ -71,7 +71,18 @@
         .search {
             display: none;
             @include media(">=lg-laptop") {
-                @include searchInput(300px, $search-height);
+                @include searchInput(
+                    300px,
+                    $search-height,
+                    linear-gradient(
+                        90deg,
+                        rgba(255, 255, 255, 0.45) 0%,
+                        rgba(255, 255, 255, 0.6) 75.91%,
+                        #ffffff 100.91%
+                    ),
+                    white,
+                    #{$text-secondary}
+                );
             }
         }
 
