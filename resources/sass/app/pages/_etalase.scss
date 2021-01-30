@@ -9,6 +9,9 @@ main {
         @include media(">=tablet") {
             padding: 2rem 3rem;
         }
+        @include media(">=lg-laptop") {
+            display: none;
+        }
 
         .search__mobile {
             display: flex;
@@ -27,9 +30,6 @@ main {
                     rgba(193, 179, 255, 0.45),
                     #f8f7ff
                 );
-                @include media(">=lg-laptop") {
-                    display: none;
-                }
             }
         }
     }
